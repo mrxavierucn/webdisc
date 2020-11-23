@@ -1,0 +1,31 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Academico;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class AcademicoFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Academico::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'nombre'=>$this->faker->name(),
+            'rol'=>$this->faker->sentence(),
+            'permanencia'=>$this->faker->sentence(),
+            'foto'=>$this->faker->sentence()
+        ];
+    }
+}
