@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Documento;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class DocumentoFactory extends Factory
 {
@@ -21,8 +22,14 @@ class DocumentoFactory extends Factory
      */
     public function definition()
     {
+        $titulo=$this->faker->name();
         return [
-            'titulo'=>$this->faker->title()
+            'titulo'=>$titulo,
+            'slug'=>Str::slug($titulo,'-'),
+            'descripcion'=>$this->faker->sentence(),
+            'enlace'=>$this->faker->url(),
+            'archivo'=>$this->faker->title(),
+            'tipo'=>$this->faker->randomElement(['reacreditacion','plan','otro']),
         ];
     }
 }

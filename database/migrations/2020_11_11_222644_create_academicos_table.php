@@ -16,6 +16,7 @@ class CreateAcademicosTable extends Migration
         Schema::create('academicos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->string('rol')->nullable();
             $table->string('permanencia');
             $table->string('foto')->nullable();

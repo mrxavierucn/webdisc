@@ -1,7 +1,11 @@
 @extends('layouts.plantilla')
 
-@section('title','Home')
+@section('title','DISC - Departamento de Ingenieria de Sistemas y Computacion')
 
 @section('content')
-    <h1>Bienvenido</h1>
+    <h1 class="text-center">Bienvenido</h1>
+    <body>
+
+    </body>
+
 @endsection

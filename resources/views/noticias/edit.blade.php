@@ -5,6 +5,8 @@
 @section('content')
 
 <h1>Modificar Noticia</h1>
+<br>
+@auth
 <form action="{{route('noticias.update',$noticia)}}"method="POST">
     @csrf
     @method('put')
@@ -30,5 +32,7 @@
     <br><br>
     <button type="submit">Guardar Cambios</button>
 </form>
-
+@else
+<p>Usted No tiene Acceso.</p>
+@endauth
 @endsection

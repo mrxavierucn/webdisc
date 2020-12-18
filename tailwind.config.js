@@ -8,9 +8,19 @@ module.exports = {
     ],
 
     theme: {
+        fontFamily:{
+            'roboto':['Roboto']
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+            colors:{
+                banner:{
+                    default:'#24425A',
+                    menu:'#1D3548',
+                    opcion:'#122738'
+                }
             },
         },
     },

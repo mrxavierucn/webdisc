@@ -22,12 +22,11 @@ class NoticiaFactory extends Factory
      */
     public function definition()
     {
-        $titulo=$this->faker->title();
+        $titulo=$this->faker->name();
         return [
-            //
             'titulo'=>$titulo,
+            'slug'=>Str::slug($titulo,'-'),
             'cuerpo'=>$this->faker->sentence(),
-            'slug'=> Str::slug($titulo,'-')
         ];
     }
 }

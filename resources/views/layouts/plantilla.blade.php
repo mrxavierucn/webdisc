@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-
+    <style>
+        .imagen{
+            background-image: url("{{asset('img/depto-y1-300x169.jpg')}}");
+            height: 196px;
+            width: 300px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 
     <!-- favicon -->
-    <!-- estilos -->
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
     <!-- header -->
     <!-- nav -->
     <header>
-
-
-        <h1>Departamento de Ingenieria de Sistemas y Computacion</h1>
-        <nav>
-            <ul>
-                <li><a href="{{route('home')}}">Pagina Principal</a></li>
-                <li><a href="{{route('historia')}}">Historia del Departamento</a></li>
-                <li><a href="{{route('programas')}}">Programas del Departamento</a></li>
-                <li><a href="{{route('academicos')}}">Academicos del Departamento</a></li>
-                <li><a href="{{route('documentos')}}">Documentos de Interes</a></li>
-                <li><a href="{{route('noticias')}}">Portal de Noticias</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="w-screen h-40 bg-banner">
+                <a href="http://www.ucn.cl">
+                    <img class="float-left mx-20 my-10" src="http://www.disc.ucn.cl/wp-content/themes/disc/img/logo-ucn.png" width="300" height="70" scale="0">
+                </a>
+                <h1 class="font-sans text-2xl text-gray-300 text-right px-24 py-8"><a href="{{route('home')}}">Departamento de Ingeniería de <br>Sistemas y Computacion</a></h1>
+            </div>
+        </div>
     </header>
+    @livewire('navigation')
     @yield('content')
     <!-- footer -->
     <!-- script -->

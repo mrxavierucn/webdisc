@@ -16,6 +16,11 @@ class CreateDocumentosTable extends Migration
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
+            $table->string('slug');
+            $table->text('descripcion');
+            $table->string('enlace');
+            $table->string('archivo');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

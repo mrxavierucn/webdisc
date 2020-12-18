@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Academico;
+use App\Http\Requests\StoreAcademico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class AcademicoController extends Controller
 {
@@ -10,15 +14,75 @@ class AcademicoController extends Controller
         return view('academicos.index');
     }
 
+    public function create(){
+        return view('academicos.create');
+    }
+
+    public function store(StoreAcademico $request){
+        $academico=Academico::create($request->all());
+        if($request->foto){
+            $archivo = $request->file('foto')->store('fotoAcademico');
+            $url=Storage::url($archivo);
+            $academico->update([
+                'foto'=>$url,
+            ]);
+        }
+
+        return redirect()->route('academicos.show',$academico);
+    }
+
     public function permanente(){
-        return view('academicos.permanente');
+        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+
+        return view('academicos.permanente',compact('academicos'));
     }
 
     public function temporal(){
-        return view('academicos.temporal');
+        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+
+        return view('academicos.temporal',compact('academicos'));
     }
 
     public function apoyo(){
-        return view('academicos.apoyo');
+        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+
+        return view('academicos.apoyo',compact('academicos'));
+    }
+
+    public function show(Academico $academico){
+        return view('academicos.show',compact('academico'));
+    }
+
+    public function edit(Academico $academico){
+        return view('academicos.edit',compact('academico'));
+    }
+
+    public function update(Request $request,Academico $academico){
+        $request->validate([
+            'nombre'=>[
+                'required',
+                Rule::unique('academicos')->ignore($academico)
+            ],
+            'permanencia'=>'required'
+        ]);
+
+        $academico->update($request->all());
+
+        return redirect()->route('academicos.show',$academico);
+    }
+
+    public function destroy(Academico $academico){
+        $url=str_replace('storage','public',$academico->foto);
+        Storage::delete($url);
+
+        $permanencia=$academico->permanencia;
+        $academico->delete();
+        if($permanencia=='permanente'){
+            return redirect()->route('academicos.permanente');
+        }elseif($permanencia=='temporal'){
+            return redirect()->route('academicos.temporal');
+        }else{
+            return redirect()->route('academicos.apoyo');
+        }
     }
 }

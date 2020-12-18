@@ -24,8 +24,9 @@ class StoreNoticia extends FormRequest
     public function rules()
     {
         return [
-            'titulo'=>'required|min:10|max:50',
-            'cuerpo'=>'required|min:50|max:1000'
+            'titulo'=>'required|unique:noticias|min:10|max:50',
+            'cuerpo'=>'required|min:50|max:1000',
+            'foto'=>'image'
         ];
     }
 
@@ -33,11 +34,14 @@ class StoreNoticia extends FormRequest
     {
         return[
             'titulo.required'=>'La noticia debe tener un titulo',
+            'titulo.unique'=>'Ya existe una noticia con ese titulo',
             'titulo.min'=>'El titulo debe tener como minimo 10 caracteres',
             'titulo.max'=>'El titulo debe tener como maximo 50 caracteres',
             'cuerpo.required'=>'El cuerpo de la noticia no puede estar vacio',
             'cuerpo.min'=>'La noticia debe tener como minimo 50 caracteres',
-            'cuerpo.max'=>'La noticia debe tener como maximo 1000 caracteres'
+            'cuerpo.max'=>'La noticia debe tener como maximo 1000 caracteres',
+            'foto.image'=>'Archivo invilado. Asegurese de haber subido un archivo de tipo imagen.'
+
         ];
     }
 }

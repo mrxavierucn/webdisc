@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\Academico;
 use App\Models\Noticia;
+use App\Models\Documento;
+use App\Models\Proyecto;
+use App\Models\Publicacion;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +20,9 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
        $this->call(AcademicoSeeder::class);
-       $this->call(NoticiaSeeder::class);
        $this->call(DocumentoSeeder::class);
+       $this->call(NoticiaSeeder::class);
+       $this->call(ProyectoSeeder::class);
+       $this->call(PublicacionSeeder::class);
     }
 }

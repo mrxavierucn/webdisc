@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNoticia;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class NoticiaController extends Controller
 {
-    //
     public function index(){
         $noticias=Noticia::orderBy('updated_at','desc')->paginate();
 
@@ -21,6 +22,13 @@ class NoticiaController extends Controller
 
     public function store(StoreNoticia $request){
         $noticia=Noticia::create($request->all());
+        if($request->foto){
+            $archivo = $request->file('foto')->store('fotoNoticias');
+            $url=Storage::url($archivo);
+            $noticia->update([
+            'foto'=>$url,
+        ]);
+        }
 
         return redirect()->route('noticias.show',$noticia);
     }
@@ -36,7 +44,10 @@ class NoticiaController extends Controller
 
     public function update(Request $request,Noticia $noticia){
         $request->validate([
-            'titulo'=>'required',
+            'titulo'=>[
+                'required',
+                Rule::unique('noticias')->ignore($noticia)
+            ],
             'cuerpo'=>'required'
         ]);
 
@@ -46,7 +57,9 @@ class NoticiaController extends Controller
     }
 
     public function destroy(Noticia $noticia){
+        $url=str_replace('storage','public',$noticia->foto);
         $noticia->delete();
+        Storage::delete($url);
 
         $noticias=Noticia::orderBy('updated_at','desc')->paginate();
 

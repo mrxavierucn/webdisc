@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Academico;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class AcademicoFactory extends Factory
 {
@@ -21,11 +22,12 @@ class AcademicoFactory extends Factory
      */
     public function definition()
     {
+        $nombre=$this->faker->name();
         return [
-            'nombre'=>$this->faker->name(),
+            'nombre'=>$nombre,
+            'slug'=>Str::slug($nombre,'-'),
             'rol'=>$this->faker->sentence(),
-            'permanencia'=>$this->faker->sentence(),
-            'foto'=>$this->faker->sentence()
+            'permanencia'=>$this->faker->randomElement(['permanente','temporal','apoyo']),
         ];
     }
 }
