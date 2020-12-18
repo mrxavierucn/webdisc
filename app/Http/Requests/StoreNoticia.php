@@ -40,7 +40,7 @@ class StoreNoticia extends FormRequest
             'cuerpo.required'=>'El cuerpo de la noticia no puede estar vacio',
             'cuerpo.min'=>'La noticia debe tener como minimo 50 caracteres',
             'cuerpo.max'=>'La noticia debe tener como maximo 1000 caracteres',
-            'foto.image'=>'Archivo invilado. Asegurese de haber subido un archivo de tipo imagen.'
+            'foto.image'=>'Archivo invalido. Asegurese de haber subido un archivo de tipo imagen.'
 
         ];
     }

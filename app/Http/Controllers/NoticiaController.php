@@ -27,7 +27,7 @@ class NoticiaController extends Controller
             $url=Storage::url($archivo);
             $noticia->update([
             'foto'=>$url,
-        ]);
+            ]);
         }
 
         return redirect()->route('noticias.show',$noticia);

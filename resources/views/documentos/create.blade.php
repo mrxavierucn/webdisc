@@ -42,7 +42,7 @@
         <small>*{{$message}}</small>
     @enderror
     <br><br>
-    <button type="submit">Publicar Noticia</button>
+    <button type="submit">Subir Documento</button>
 </form>
 @else
 <p>Usted No tiene Accesso.</p>

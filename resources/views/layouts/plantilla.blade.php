@@ -31,6 +31,11 @@
     </header>
     @livewire('navigation')
     @yield('content')
+    <div class="container">
+        <div class="bottom-0 bg-banner w-screen">
+
+        </div>
+    </div>
     <!-- footer -->
     <!-- script -->
 </body>

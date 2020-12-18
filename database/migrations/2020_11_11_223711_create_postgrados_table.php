@@ -15,13 +15,12 @@ class CreatePostgradosTable extends Migration
     {
         Schema::create('postgrados', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('nombre')->unique;
+            $table->string('slug');
             $table->string('director');
-            $table->text('planEstudio');
             $table->text('descripcion');
-            $table->text('objetivo');
-            $table->text('dirigidoA');
-            $table->unsignedInteger('costo');
+            $table->unsignedTinyInteger('duracion');
+            $table->string('url')->nullable;
             $table->timestamps();
         });
     }

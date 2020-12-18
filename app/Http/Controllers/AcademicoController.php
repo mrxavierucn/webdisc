@@ -7,6 +7,7 @@ use App\Http\Requests\StoreAcademico;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class AcademicoController extends Controller
 {
@@ -19,7 +20,13 @@ class AcademicoController extends Controller
     }
 
     public function store(StoreAcademico $request){
-        $academico=Academico::create($request->all());
+        $slug=Str::slug($request->nombre,'-');
+        $academico=Academico::create([
+            'nombre'=>$request->nombre,
+            'slug'=>$slug,
+            'rol'=>$request->rol,
+            'permanencia'=>$request->permanencia
+        ]);
         if($request->foto){
             $archivo = $request->file('foto')->store('fotoAcademico');
             $url=Storage::url($archivo);
@@ -61,9 +68,12 @@ class AcademicoController extends Controller
         $request->validate([
             'nombre'=>[
                 'required',
-                Rule::unique('academicos')->ignore($academico)
+                Rule::unique('academicos')->ignore($academico),
+                'min:10',
+                'max:150'
             ],
-            'permanencia'=>'required'
+            'rol'=>'max:50',
+            'foto'=>'image'
         ]);
 
         $academico->update($request->all());

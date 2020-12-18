@@ -4,8 +4,10 @@
 
 @section('content')
 
-<h1>Programas del Departamento</h1>
+<h1 class="text-center">Programas del Departamento</h1>
+<br>
 <p>Estos son los programas que ofrece el Departamento: </p>
+<br>
 <nav>
     <ul>
         <li><a href="{{route('programas.pregrado')}}">Programas de Pre-Grado</a></li>

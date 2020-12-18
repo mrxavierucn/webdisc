@@ -19,8 +19,8 @@
             @foreach ($academicos as $academico)
                 <tr>
                     <td class="border border-black">{{$academico->nombre}}</td>
-                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showProyectos',$academico->id)}}">Lista de Proyectos</a></td>
-                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showPublicaciones',$academico->id)}}">Lista de Publicaciones</a></td>
+                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showProyectos',$academico)}}">Lista de Proyectos</a></td>
+                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showPublicaciones',$academico)}}">Lista de Publicaciones</a></td>
                 </tr>
             @endforeach
         </tbody>

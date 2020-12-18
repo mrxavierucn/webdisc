@@ -29,17 +29,47 @@ Route::get('historia',[HistoriaController::class,'index'])->name('historia');
 
 Route::get('programas',[ProgramaController::class,'index'])->name('programas');
 
-Route::get('programas/create', [ProgramaController::class,'create'])->name('programas.create');
-
 Route::get('programas/pregrado', [ProgramaController::class,'pregrado'])->name('programas.pregrado');
 
-Route::get('programas/postgrado', [ProgramaController::class,'postgrado'])->name('programas.postgrado');
+Route::get('programas/pregrado/create', [ProgramaController::class,'createPregrado'])->name('programas.createPregrado');
 
-Route::get('programas/posttitulo', [ProgramaController::class,'posttitulo'])->name('programas.posttitulo');
+Route::post('programas/pregrado', [ProgramaController::class,'storePregrado'])->name('programas.storePregrado');
 
 Route::get('programas/pregrado/{pregrado}', [ProgramaController::class,'showPregrado'])->name('programas.showPregrado');
 
+Route::get('programas/pregrado/{pregrado}/edit', [ProgramaController::class,'editPregrado'])->name('programas.editPregrado');
+
+Route::put('programas/pregrado/{pregrado}', [ProgramaController::class,'updatePregrado'])->name('programas.updatePregrado');
+
+Route::delete('programas/pregrado/{pregrado}', [ProgramaController::class,'destroyPregrado'])->name('programas.destroyPregrado');
+
+Route::get('programas/postgrado', [ProgramaController::class,'postgrado'])->name('programas.postgrado');
+
+Route::get('programas/postgrado/create', [ProgramaController::class,'createPostgrado'])->name('programas.createPostgrado');
+
+Route::post('programas/postgrado', [ProgramaController::class,'storePostgrado'])->name('programas.storePostgrado');
+
 Route::get('programas/postgrado/{postgrado}', [ProgramaController::class,'showPostgrado'])->name('programas.showPostgrado');
+
+Route::get('programas/postgrado/{postgrado}/edit', [ProgramaController::class,'editPostgrado'])->name('programas.editPostgrado');
+
+Route::put('programas/postgrado/{postgrado}', [ProgramaController::class,'updatePostgrado'])->name('programas.updatePostgrado');
+
+Route::delete('programas/postgrado/{postgrado}', [ProgramaController::class,'destroyPostgrado'])->name('programas.destroyPostgrado');
+
+Route::get('programas/posttitulo', [ProgramaController::class,'posttitulo'])->name('programas.posttitulo');
+
+Route::get('programas/posttitulo/create', [ProgramaController::class,'createPosttitulo'])->name('programas.createPosttitulo');
+
+Route::post('programas/posttitulo', [ProgramaController::class,'storePosttitulo'])->name('programas.storePosttitulo');
+
+Route::get('programas/posttitulo/{posttitulo}', [ProgramaController::class,'showPosttitulo'])->name('programas.showPosttitulo');
+
+Route::get('programas/posttitulo/{posttitulo}/edit', [ProgramaController::class,'editPosttitulo'])->name('programas.editPosttitulo');
+
+Route::put('programas/posttitulo/{posttitulo}', [ProgramaController::class,'updatePosttitulo'])->name('programas.updatePosttitulo');
+
+Route::delete('programas/posttitulo/{posttitulo}', [ProgramaController::class,'destroyPosttitulo'])->name('programas.destroyPosttitulo');
 
 //academicos
 
@@ -158,13 +188,13 @@ Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[Inve
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
+/*
 Route::middleware('auth')->get('/register', function () {
     return view('auth.register');
 })->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])->middleware(['auth']);
-
+*/
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
 });

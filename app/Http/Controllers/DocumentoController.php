@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreDocumento;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class DocumentoController extends Controller
 {
@@ -25,8 +26,10 @@ class DocumentoController extends Controller
         $archivo = $request->file('enlace');
         $nombre = $archivo->getClientOriginalName();
 
+        $slug=Str::slug($request->titulo,'-');
         $documento=Documento::create([
             'titulo'=>$request->titulo,
+            'slug'=>$slug,
             'descripcion'=>$request->descripcion,
             'enlace'=>$url,
             'archivo'=>$nombre,

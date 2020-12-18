@@ -2,11 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Academico;
-use App\Models\Noticia;
-use App\Models\Documento;
-use App\Models\Proyecto;
-use App\Models\Publicacion;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +17,9 @@ class DatabaseSeeder extends Seeder
        $this->call(AcademicoSeeder::class);
        $this->call(DocumentoSeeder::class);
        $this->call(NoticiaSeeder::class);
+       $this->call(PregradoSeeder::class);
+       $this->call(PostgradoSeeder::class);
+       $this->call(PosttituloSeeder::class);
        $this->call(ProyectoSeeder::class);
        $this->call(PublicacionSeeder::class);
     }

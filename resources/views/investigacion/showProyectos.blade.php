@@ -16,7 +16,7 @@
         <tbody>
             @foreach ($proyectos as $proyecto)
                 <tr>
-                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showProyecto',$proyecto->id)}}">{{$proyecto->nombre}}</a></td>
+                    <td class="hover:underline border border-black"><a href="{{route('investigacion.showProyecto',$proyecto)}}">{{$proyecto->nombre}}</a></td>
                 </tr>
             @endforeach
         </tbody>

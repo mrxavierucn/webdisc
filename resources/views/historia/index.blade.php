@@ -8,7 +8,7 @@
 <br>
 <div class="container text-justify">
     <img class="float-left px-20" src="http://www.disc.ucn.cl/wp-content/uploads/1994/12/depto-y1-300x169.jpg" alt="">
-    <p class="px-20">La Informática en la Universidad Católica del Norte comenzó su desarrollo en el  año 1969 en el Centro de Computación (CECUN). CECUN estaba orientado a la prestación de servicios internos a la UCN y servicios externos a empresas de la zona.</p>
+    <p class="px-20 font-sans">La Informática en la Universidad Católica del Norte comenzó su desarrollo en el  año 1969 en el Centro de Computación (CECUN). CECUN estaba orientado a la prestación de servicios internos a la UCN y servicios externos a empresas de la zona.</p>
     <p class="px-20 py-4">El Departamento de Ingeniería de Sistemas y Computación (DISC) fue creado el 11 de octubre de 1979, por el Decreto de Rectoría Nº 161/79, con el nombre de “Departamento de Ciencias de la Computación e Informática“.</p>
     <p class="px-20 py-4">El mencionado Departamento quedó integrado por los académicos Jornada Completa, pertenecientes a la Sección de Ingeniería de Sistemas del Departamento de Ingeniería. Su labor fundamental, a partir de marzo de 1980, consistió en el apoyo docente a la Carrera de Ingeniería de Ejecución en Computación e Informática, creada el 9 de octubre de 1979, por Decreto de Rectoría Nº 157/79.</p>
     <p class="px-20 py-4">El cuerpo académico inicial estaba formado por siete profesionales, de los cuales los académicos Raúl Apaz Vargas y Ricardo Durán Arriagada, asumieron las responsabilidades de Director de Departamento y de Jefe de Carrera, respectivamente.</p>

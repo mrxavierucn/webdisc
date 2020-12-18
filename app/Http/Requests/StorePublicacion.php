@@ -46,11 +46,11 @@ class StorePublicacion extends FormRequest
             'revista.min'=>'El nombre de la revista debe tener como minimo 10 caracteres',
             'revista.max'=>'El nombre de la revista debe tener como maximo 150 caracteres',
             'anio.required'=>'Indique el año de publicacion',
-            'anio.integer'=>'El año se compone de numeros...',
+            'anio.integer'=>'Ingrese un dato numerico',
             'primera_pagina.required'=>'Indique la primera pagina de la publicacion en la revista',
-            'primera_pagina.integer'=>'Es un dato numerico...',
+            'primera_pagina.integer'=>'Ingrese un dato numerico',
             'ultima_pagina.required'=>'Indique la ultima pagina de la publicacion en la revista',
-            'ultima_pagina.integer'=>'Es un dato numerico...',
+            'ultima_pagina.integer'=>'Ingrese un dato numero',
             'link.required'=>'El proyecto debe tener un enlace'
         ];
     }

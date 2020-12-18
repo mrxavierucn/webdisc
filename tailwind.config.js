@@ -9,7 +9,8 @@ module.exports = {
 
     theme: {
         fontFamily:{
-            'roboto':['Roboto']
+            'roboto':['Roboto'],
+            'source':['Source Sans Pro'],
         },
         extend: {
             fontFamily: {
