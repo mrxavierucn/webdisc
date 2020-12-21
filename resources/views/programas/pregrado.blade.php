@@ -70,5 +70,8 @@
     </div>
 </div>
 <br>
+@auth
 <li><a href="{{route('programas.createPregrado')}}">Añadir Programa de Pre-grado</a></li>
+@endauth
+
 @endsection

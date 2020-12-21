@@ -36,7 +36,8 @@
             {{$posttitulo->duracion}} Semestres.
         </dd>
         </div>
-          <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+        @auth
+        <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
             <dt class="text-sm font-medium text-gray-500">
                 <a href="{{route('programas.editPosttitulo',$posttitulo)}}">Modificar Programa de Posttitulo</a>
                 <form action="{{route('programas.destroyPosttitulo',$posttitulo)}}" METHOD="POST">
@@ -45,8 +46,8 @@
                     <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este programa?')">Eliminar Programa de Posttitulo</button>
                 </form>
             </dt>
-
           </div>
+        @endauth
 
       </dl>
     </div>

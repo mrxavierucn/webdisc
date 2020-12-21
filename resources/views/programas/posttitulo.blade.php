@@ -70,5 +70,8 @@
     </div>
 </div>
 <br>
+@auth
 <li><a href="{{route('programas.createPosttitulo')}}">Añadir Programa de Post-titulo</a></li>
+@endauth
+
 @endsection

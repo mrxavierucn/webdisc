@@ -40,7 +40,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$otro->descripcion}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ \Illuminate\Support\Str::limit($otro->descripcion, 10, $end='...') }}
+                                    </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <a href="{{asset($otro->enlace)}}" download="{{$otro->archivo}}">

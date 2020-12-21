@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProgramaController;
 use App\Http\Controllers\AcademicoController;
 use App\Http\Controllers\NoticiaController;
@@ -191,8 +192,10 @@ Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[Inve
 
 //Administrador
 
+Auth::routes(['verify' => true]);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->name('dashboard');
 /*
 Route::middleware('auth')->get('/register', function () {

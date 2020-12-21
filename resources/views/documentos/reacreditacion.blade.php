@@ -40,7 +40,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$reacreditacion->descripcion}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ \Illuminate\Support\Str::limit($reacreditacion->descripcion, 20, $end='...') }}
+                                    </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <a href="{{asset($reacreditacion->enlace)}}" download="{{$reacreditacion->archivo}}">
