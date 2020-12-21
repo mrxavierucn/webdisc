@@ -5,28 +5,49 @@
 @section('content')
 <h1>Portal de Noticias</h1>
 <br>
-<nav>
-    <ul>
+<div class="bg-gray-200  shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:px-6 border border-gray-200">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
         {{$noticia->titulo}}
         <br>
-        {{$noticia->created_at}}
-        <br><br>
-        <p style="white-space: pre-line">{{$noticia->cuerpo}}</p>
-    </ul>
-</nav>
-<div class="container">
-    <img class="float-left" src="{{asset($noticia->foto)}}" alt="">
+        Publicado: {{$noticia->created_at}}
+        <br>
+        Ultima Actualizacion: {{$noticia->updated_at}}
+      </h3>
+    </div>
+    <div class="border-t border-gray-200">
+      <dl>
+        <div class="bg-gray-100 px-4 py-5 sm:grid sm:gap-4 sm:px-6 border border-gray-200">
+          <dt class="text-sm font-medium text-gray-500">
+            @if ($noticia->foto)
+            <div class="max-w-xl rounded overflow-hidden shadow-lg my-2">
+                <img class="float-left" src="{{asset($noticia->foto)}}" alt="">
+            </div>
+            <br>
+            @endif
+            <p style="white-space: pre-line">{{$noticia->cuerpo}}</p>
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+
+          </dd>
+        </div>
+
+          @auth
+          <div class="bg-gray-100 px-4 py-5 sm:grid sm:gap-4 sm:px-6 border border-gray-200">
+            <dt class="text-sm font-medium text-gray-500">
+                <a href="{{route('noticias.edit',$noticia)}}">Modificar Noticia</a>
+                <form action="{{route('noticias.destroy',$noticia)}}" METHOD="POST">
+                    @csrf
+                    @method('delete')
+                    <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar esta noticia?')">Eliminar Noticia</button>
+                </form>
+            </dt>
+          </div>
+          @endauth
+      </dl>
+    </div>
 </div>
 <br>
-@auth
-<li><a href="{{route('noticias.edit',$noticia)}}">Modificar Noticia</a></li>
-<form action="{{route('noticias.destroy',$noticia)}}" METHOD="POST">
-    @csrf
-    @method('delete')
-    <button type="submit" onclick="return confirm('¿Esta seguro que desea eliminar esta noticia?')">Eliminar Noticia</button>
-</form>
-<br>
-@endauth
 <form action="{{route('noticias',$noticia)}}">
     <button type="submit">Volver al portal</button>
 </form>

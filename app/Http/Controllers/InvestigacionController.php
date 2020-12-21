@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\URL;
 class InvestigacionController extends Controller
 {
     public function index(){
-        $academicos=Academico::orderBy('nombre','asc')->paginate();
+        $academicos=Academico::orderBy('nombre','asc')->paginate(10);
 
         return view('investigacion.index',compact('academicos'));
     }
 
     public function listaProyectos(){
-        $proyectos=Proyecto::orderBy('nombre','asc')->paginate();
+        $proyectos=Proyecto::orderBy('nombre','asc')->paginate(10);
 
         return view('investigacion.listaProyectos',compact('proyectos'));
     }

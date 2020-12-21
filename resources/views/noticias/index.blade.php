@@ -33,8 +33,12 @@
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                <a href="{{route('noticias.show',$noticia)}}">{{$noticia->titulo}}</a>
+                                            <div class="text-sm text-gray-900">
+                                                <a class="font-medium" href="{{route('noticias.show',$noticia)}}">{{$noticia->titulo}}</a>
+                                                <br>
+                                                Publicado: {{$noticia->created_at}}
+                                                <br>
+                                                Ultima Actualizacion: {{$noticia->updated_at}}
                                                 <br>
                                                 <br>
                                                 <div class="text-sm text-gray-900">
