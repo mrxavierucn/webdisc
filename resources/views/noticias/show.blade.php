@@ -11,7 +11,7 @@
         <br>
         {{$noticia->created_at}}
         <br><br>
-        {{$noticia->cuerpo}}
+        <p style="white-space: pre-line">{{$noticia->cuerpo}}</p>
     </ul>
 </nav>
 <div class="container">

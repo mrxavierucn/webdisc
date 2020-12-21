@@ -40,7 +40,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$reacreditacion->descripcion}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ \Illuminate\Support\Str::limit($reacreditacion->descripcion, 20, $end='...') }}
+                                    </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <a href="{{asset($reacreditacion->enlace)}}" download="{{$reacreditacion->archivo}}">
@@ -100,7 +102,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$plan->descripcion}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ \Illuminate\Support\Str::limit($plan->descripcion, 20, $end='...') }}
+                                    </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <a href="{{asset($plan->enlace)}}" download="{{$plan->archivo}}">
@@ -160,7 +164,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$otro->descripcion}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ \Illuminate\Support\Str::limit($otro->descripcion, 20, $end='...') }}
+                                    </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <a href="{{asset($otro->enlace)}}" download="{{$otro->archivo}}">

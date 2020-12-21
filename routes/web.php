@@ -192,8 +192,6 @@ Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[Inve
 
 //Administrador
 
-Auth::routes(['verify' => true]);
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
 })->name('dashboard');

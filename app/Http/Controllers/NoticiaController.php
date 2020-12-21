@@ -54,9 +54,9 @@ class NoticiaController extends Controller
                 'required',
                 Rule::unique('noticias')->ignore($noticia),
                 'min:10',
-                'max:50'
+                'max:200'
             ],
-            'cuerpo'=>'required|min:50|max:1000',
+            'cuerpo'=>'required|min:50|max:5000',
         ]);
         $slug=Str::slug($request->titulo,'-');
         $noticia->update([
