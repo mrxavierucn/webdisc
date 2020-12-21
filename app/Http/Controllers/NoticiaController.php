@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreNoticia;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class NoticiaController extends Controller
 {
@@ -21,7 +22,12 @@ class NoticiaController extends Controller
     }
 
     public function store(StoreNoticia $request){
-        $noticia=Noticia::create($request->all());
+        $slug=Str::slug($request->titulo,'-');
+        $noticia=Noticia::create([
+            'titulo'=>$request->titulo,
+            'slug'=>$slug,
+            'cuerpo'=>$request->cuerpo,
+        ]);
         if($request->foto){
             $archivo = $request->file('foto')->store('fotoNoticias');
             $url=Storage::url($archivo);
@@ -46,12 +52,18 @@ class NoticiaController extends Controller
         $request->validate([
             'titulo'=>[
                 'required',
-                Rule::unique('noticias')->ignore($noticia)
+                Rule::unique('noticias')->ignore($noticia),
+                'min:10',
+                'max:50'
             ],
-            'cuerpo'=>'required'
+            'cuerpo'=>'required|min:50|max:1000',
         ]);
-
-        $noticia->update($request->all());
+        $slug=Str::slug($request->titulo,'-');
+        $noticia->update([
+            'titulo'=>$request->titulo,
+            'slug'=>$slug,
+            'cuerpo'=>$request->cuerpo,
+        ]);
 
         return redirect()->route('noticias.show',$noticia);
     }

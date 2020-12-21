@@ -27,6 +27,4 @@
     </table>
 </div>
 {{$academicos->links()}}
-<li class="hover:underline px-2"><a href="{{route('investigacion.listaProyectos')}}">Mostrar todos los Proyectos</a></li>
-<li class="hover:underline px-2"><a href="{{route('investigacion.listaPublicaciones')}}">Mostrar todas las Publicaciones</a></li>
 @endsection

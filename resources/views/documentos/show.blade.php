@@ -22,7 +22,7 @@
 <form action="{{route('documentos.destroy',$documento)}}" METHOD="POST">
     @csrf
     @method('delete')
-    <button type="submit">Eliminar Documento</button>
+    <button type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este documento?')">Eliminar Documento</button>
 </form>
 @endauth
 

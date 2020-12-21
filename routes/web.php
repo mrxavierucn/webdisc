@@ -29,6 +29,8 @@ Route::get('historia',[HistoriaController::class,'index'])->name('historia');
 
 Route::get('programas',[ProgramaController::class,'index'])->name('programas');
 
+//pregrado
+
 Route::get('programas/pregrado', [ProgramaController::class,'pregrado'])->name('programas.pregrado');
 
 Route::get('programas/pregrado/create', [ProgramaController::class,'createPregrado'])->name('programas.createPregrado');
@@ -43,6 +45,8 @@ Route::put('programas/pregrado/{pregrado}', [ProgramaController::class,'updatePr
 
 Route::delete('programas/pregrado/{pregrado}', [ProgramaController::class,'destroyPregrado'])->name('programas.destroyPregrado');
 
+//postgrado
+
 Route::get('programas/postgrado', [ProgramaController::class,'postgrado'])->name('programas.postgrado');
 
 Route::get('programas/postgrado/create', [ProgramaController::class,'createPostgrado'])->name('programas.createPostgrado');
@@ -56,6 +60,8 @@ Route::get('programas/postgrado/{postgrado}/edit', [ProgramaController::class,'e
 Route::put('programas/postgrado/{postgrado}', [ProgramaController::class,'updatePostgrado'])->name('programas.updatePostgrado');
 
 Route::delete('programas/postgrado/{postgrado}', [ProgramaController::class,'destroyPostgrado'])->name('programas.destroyPostgrado');
+
+//posttitulo
 
 Route::get('programas/posttitulo', [ProgramaController::class,'posttitulo'])->name('programas.posttitulo');
 

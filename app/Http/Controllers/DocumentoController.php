@@ -12,7 +12,11 @@ use Illuminate\Support\Str;
 class DocumentoController extends Controller
 {
     public function index(){
-        return view('documentos.index');
+        $reacreditacions=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'reacreditacion')->paginate(3);
+        $plans=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'plan')->paginate(3);
+        $otros=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'otro')->paginate(3);
+
+        return view('documentos.index',compact('reacreditacions','plans','otros'));
     }
 
     public function create(){
@@ -40,21 +44,21 @@ class DocumentoController extends Controller
     }
 
     public function reacreditacion(){
-        $documentos=Documento::orderBy('titulo','asc')->paginate(Documento::count());
+        $reacreditacions=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'reacreditacion')->paginate(Documento::count());
 
-        return view('documentos.reacreditacion',compact('documentos'));
+        return view('documentos.reacreditacion',compact('reacreditacions'));
     }
 
     public function plan(){
-        $documentos=Documento::orderBy('titulo','asc')->paginate(Documento::count());
+        $plans=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'plan')->paginate(Documento::count());
 
-        return view('documentos.plan',compact('documentos'));
+        return view('documentos.plan',compact('plans'));
     }
 
     public function otro(){
-        $documentos=Documento::orderBy('titulo','asc')->paginate(Documento::count());
+        $otros=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'otro')->paginate(Documento::count());
 
-        return view('documentos.otro',compact('documentos'));
+        return view('documentos.otro',compact('otros'));
     }
 
     public function show(Documento $documento){
@@ -69,12 +73,18 @@ class DocumentoController extends Controller
         $request->validate([
             'titulo'=>[
                 'required',
-                Rule::unique('documentos')->ignore($documento)
+                Rule::unique('documentos')->ignore($documento),
+                'min:10',
+                'max:500'
             ],
-            'descripcion'=>'required'
+            'descripcion'=>'required|min:10|max:500',
         ]);
-
-        $documento->update($request->all());
+        $slug=Str::slug($request->titulo,'-');
+        $documento->update([
+            'titulo'=>$request->titulo,
+            'slug'=>$slug,
+            'descripcion'=>$request->descripcion,
+        ]);
 
         return redirect()->route('documentos.show',$documento);
     }
@@ -84,6 +94,14 @@ class DocumentoController extends Controller
         $documento->delete();
         Storage::delete($url);
 
-        return redirect()->route('documentos');
+        $tipo=$documento->tipo;
+        $documento->delete();
+        if($tipo=='reacreditacion'){
+            return redirect()->route('documentos.reacreditacion');
+        }elseif($tipo=='plan'){
+            return redirect()->route('documentos.plan');
+        }else{
+            return redirect()->route('documentos.otro');
+        }
     }
 }

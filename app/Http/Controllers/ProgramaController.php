@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Storage;
 class ProgramaController extends Controller
 {
     public function index(){
-        return view('programas.index');
+        $pregrados=Pregrado::orderBy('nombre','asc')->paginate(2);
+        $postgrados=Postgrado::orderBy('nombre','asc')->paginate(2);
+        $posttitulos=Posttitulo::orderBy('nombre','asc')->paginate(2);
+
+        return view('programas.index',compact('pregrados','postgrados','posttitulos'));
     }
 
     public function pregrado(){
-        $pregrados=Pregrado::orderBy('nombre','asc')->paginate();
+        $pregrados=Pregrado::orderBy('nombre','asc')->paginate(Pregrado::count());
 
         return view('programas.pregrado',compact('pregrados'));
     }
@@ -84,9 +88,26 @@ class ProgramaController extends Controller
             'acreditacion'=>'required|min:10|max:150',
             'perfilEgresado'=>'required|min:10|max:2000',
         ]);
+        $slug=Str::slug($request->nombre,'-');
 
-        $pregrado->update($request->all());
-
+        $pregrado->update([
+            'nombre'=>$request->nombre,
+            'slug'=>$slug,
+            'jefe'=>$request->jefe,
+            'titulo'=>$request->titulo,
+            'gradoAcademico'=>$request->gradoAcademico,
+            'area'=>$request->area,
+            'subarea'=>$request->subarea,
+            'duracion'=>$request->duracion,
+            'acreditacion'=>$request->acreditacion,
+            'perfilEgresado'=>$request->perfilEgresado,
+            'url'=>'',
+        ]);
+        if($request->url){
+            $pregrado->update([
+                'url'=>$request->url,
+            ]);
+        }
         return redirect()->route('programas.showPregrado',$pregrado);
     }
 
@@ -97,7 +118,7 @@ class ProgramaController extends Controller
     }
 
     public function postgrado(){
-        $postgrados=Postgrado::orderBy('nombre','asc')->paginate();
+        $postgrados=Postgrado::orderBy('nombre','asc')->paginate(Postgrado::count());
 
         return view('programas.postgrado',compact('postgrados'));
     }
@@ -146,7 +167,21 @@ class ProgramaController extends Controller
             'duracion'=>'required|integer',
         ]);
 
-        $postgrado->update($request->all());
+        $slug=Str::slug($request->nombre,'-');
+
+        $postgrado->update([
+            'nombre'=>$request->nombre,
+            'slug'=>$slug,
+            'director'=>$request->director,
+            'descripcion'=>$request->descripcion,
+            'duracion'=>$request->duracion,
+            'url'=>''
+        ]);
+        if($request->url){
+            $postgrado->update([
+                'url'=>$request->url,
+            ]);
+        }
 
         return redirect()->route('programas.showPostgrado',$postgrado);
     }
@@ -158,7 +193,7 @@ class ProgramaController extends Controller
     }
 
     public function posttitulo(){
-        $posttitulos=Posttitulo::orderBy('nombre','asc')->paginate();
+        $posttitulos=Posttitulo::orderBy('nombre','asc')->paginate(Posttitulo::count());
 
         return view('programas.posttitulo',compact('posttitulos'));
     }
@@ -208,8 +243,16 @@ class ProgramaController extends Controller
             'descripcion'=>'required|min:10|max:1500',
             'duracion'=>'required|integer',
         ]);
+        $slug=Str::slug($request->nombre,'-');
 
-        $posttitulo->update($request->all());
+        $posttitulo->update([
+            'nombre'=>$request->nombre,
+            'slug'=>$slug,
+            'coordinador'=>$request->coordinador,
+            'descripcion'=>$request->descripcion,
+            'duracion'=>$request->duracion,
+            'malla'=>$request->malla,
+        ]);
 
         return redirect()->route('programas.showPosttitulo',$posttitulo);
     }

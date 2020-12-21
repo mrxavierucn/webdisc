@@ -62,7 +62,7 @@
 <form action="{{route('investigacion.destroyPublicacion',$publicacion)}}" METHOD="POST">
     @csrf
     @method('delete')
-    <button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 mx-2" type="submit">Eliminar Publicacion</button>
+    <button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 mx-2" onclick="return confirm('¿Esta seguro que desea eliminar esta publicacion?')" type="submit">Eliminar Publicacion</button>
 </form>
 @endauth
 @endsection

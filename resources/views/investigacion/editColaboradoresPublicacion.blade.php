@@ -23,7 +23,7 @@
                         <form action="{{route('investigacion.destroyColaboradoresPublicacion',[$academico,$publicacion])}}" METHOD="POST">
                             @csrf
                             @method('delete')
-                            <td class="border border-black"><button class="underline" type="submit">Eliminar</button></td>
+                            <td class="border border-black"><button class="underline" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar de la publicacion a este academico?')">Eliminar</button></td>
 
                         </form>
 

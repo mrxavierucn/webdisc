@@ -9,7 +9,7 @@
 <ul>
     @foreach ($noticias as $noticia)
     <li>
-    <a href="{{route('noticias.show',$noticia->id)}}">{{$noticia->titulo}}</a>
+    <a href="{{route('noticias.show',$noticia)}}">{{$noticia->titulo}}</a>
     </li>
     @endforeach
 </ul>

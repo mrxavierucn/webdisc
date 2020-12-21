@@ -23,7 +23,7 @@
 <form action="{{route('noticias.destroy',$noticia)}}" METHOD="POST">
     @csrf
     @method('delete')
-    <button type="submit">Eliminar Noticia</button>
+    <button type="submit" onclick="return confirm('¿Esta seguro que desea eliminar esta noticia?')">Eliminar Noticia</button>
 </form>
 <br>
 @endauth

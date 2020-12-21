@@ -5,50 +5,47 @@
 @section('content')
 <h1 class="text-center">Cuerpo Academico</h1>
 <br>
-<div class="container mx-2">
-    <table class="table text-left">
-        <thead>
-            <tr>
-                <th class="border border-black bg-cool-gray-200">Nombre</th>
-                <th class="border border-black bg-cool-gray-200">Rol</th>
-                <th class="border border-black bg-cool-gray-200">Tipo</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                    <td class="border border-black">{{$academico->nombre}}</td>
-                    @if ($academico->rol)
-                        <td class="border border-black">{{$academico->rol}}</td>
+<div class="flex justify-center">
+    <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
+        @if ($academico->foto)
+            <img class="w-full" src="{{asset($academico->foto)}}" alt="">
+        @else
+            <img class="w-full" src="{{asset('/storage/default.jpg')}}" alt="">
+        @endif
+        <div class="px-6 py-4 bg-gray-50">
+            <div class="font-bold text-xl mb-2 font-source">{{$academico->nombre}}</div>
+            <p class="text-grey-darker text-base font-source">
+                @if ($academico->rol)
+                    Rol: {{$academico->rol}}.
+                @else
+                    Rol: Ninguno.
+                @endif
+            </p>
+            <br>
+            <p class="text-grey-darker text-base font-source">
+                @if ($academico->permanencia=='permanente')
+                    Permanencia: Academico Permanente.
+                @else
+                    @if (($academico->permanencia=='temporal'))
+                        Permanencia: Planta Temporal.
                     @else
-                        <td class="border border-black">Ninguno.</td>
+                        Permanencia: Personal de Apoyo a la Academia.
                     @endif
-                    @if ($academico->permanencia=='permanente')
-                        <td class="border border-black">Academico Permanente.</td>
-                    @else
-                        @if (($academico->permanencia=='temporal'))
-                            <td class="border border-black">Planta Temporal</td>
-                        @else
-                            <td class="border border-black">Personal de Apoyo a la Academia.</td>
-                        @endif
-                    @endif
-                </tr>
-        </tbody>
-    </table>
-</div>
-<div class="container">
-    <img class="float-left" src="{{asset($academico->foto)}}" alt="">
+                @endif
+            </p>
+            <br>
+            @auth
+                <p class="text-grey-darker text-base font-source hover:underline"><a href="{{route('academicos.edit',$academico)}}">Modificar Academico</a></p>
+                <br>
+                <form action="{{route('academicos.destroy',$academico)}}" METHOD="POST">
+                    @csrf
+                    @method('delete')
+                    <button class="text-grey-darker text-base font-source hover:underline" onclick="return confirm('¿Esta seguro que desea eliminar a este academico?')" type="submit">Eliminar Academico</button>
+                </form>
+            @endauth
+        </div>
+    </div>
 </div>
 <br>
-@auth
-<button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 mx-2"><a href="{{route('academicos.edit',$academico)}}">Modificar Academico</a></button>
-<br>
-<form action="{{route('academicos.destroy',$academico)}}" METHOD="POST">
-    @csrf
-    @method('delete')
-    <button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 mx-2" type="submit">Eliminar Academico</button>
-</form>
-@endauth
-
-
 @endsection
 

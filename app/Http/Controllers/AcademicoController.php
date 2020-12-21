@@ -12,7 +12,11 @@ use Illuminate\Support\Str;
 class AcademicoController extends Controller
 {
     public function index(){
-        return view('academicos.index');
+        $permanentes=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'permanente')->paginate(3);
+        $temporales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'temporal')->paginate(3);
+        $apoyos=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'apoyo')->paginate(3);
+
+        return view('academicos.index',compact('permanentes','temporales','apoyos'));
     }
 
     public function create(){
@@ -39,21 +43,21 @@ class AcademicoController extends Controller
     }
 
     public function permanente(){
-        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+        $permanentes=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'permanente')->paginate(Academico::count());
 
-        return view('academicos.permanente',compact('academicos'));
+        return view('academicos.permanente',compact('permanentes'));
     }
 
     public function temporal(){
-        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+        $temporales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'temporal')->paginate(Academico::count());
 
-        return view('academicos.temporal',compact('academicos'));
+        return view('academicos.temporal',compact('temporales'));
     }
 
     public function apoyo(){
-        $academicos=Academico::orderBy('nombre','asc')->paginate(Academico::count());
+        $apoyos=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'apoyo')->paginate(Academico::count());
 
-        return view('academicos.apoyo',compact('academicos'));
+        return view('academicos.apoyo',compact('apoyos'));
     }
 
     public function show(Academico $academico){
@@ -75,8 +79,13 @@ class AcademicoController extends Controller
             'rol'=>'max:50',
             'foto'=>'image'
         ]);
-
-        $academico->update($request->all());
+        $slug=Str::slug($request->nombre,'-');
+        $academico->update([
+            'nombre'=>$request->nombre,
+            'slug'=>$slug,
+            'rol'=>$request->rol,
+            'permanencia'=>$request->permanencia
+        ]);
 
         return redirect()->route('academicos.show',$academico);
     }

@@ -21,6 +21,9 @@ module.exports = {
                     default:'#24425A',
                     menu:'#1D3548',
                     opcion:'#122738'
+                },
+                contenido:{
+                    default:'#ECAB3B'
                 }
             },
         },
