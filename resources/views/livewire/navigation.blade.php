@@ -43,7 +43,7 @@
                             <div class="dropdown inline-block relative">
                                 <a href="{{route('historia')}}">
                                     <button class="text-white hover:bg-banner-opcion px-3 py-2 rounded-md text-sm font-medium">
-                                        <span>¿Quienes Somos?</span>
+                                        <span>¿Quiénes Somos?</span>
                                     </button>
                                 </a>
                             </div>
@@ -52,12 +52,12 @@
                             <div class="dropdown inline-block relative">
                                 <a href="{{route('academicos')}}">
                                     <button class="text-white hover:bg-banner-opcion px-4 py-2 rounded-md text-sm font-medium inline-flex items-center">
-                                        <span class="mr-1">Cuerpo Academico</span>
+                                        <span class="mr-1">Cuerpo Académico</span>
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                     </button>
                                 </a>
                                 <ul class="dropdown-menu absolute hidden text-gray-700">
-                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.permanente')}}">Academicos Permanentes</a></li>
+                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.permanente')}}">Académicos Permanentes</a></li>
                                     <li class=""><a class="bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.temporal')}}">Planta Temporal</a></li>
                                     <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.apoyo')}}">Personal de Apoyo a la Academia</a></li>
                                 </ul>
@@ -82,13 +82,13 @@
                             <div class="dropdown inline-block relative">
                                 <a href="{{route('documentos')}}">
                                     <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
-                                        <span class="mr-1">Documentos de Interes</span>
+                                        <span class="mr-1">Documentos de Interés</span>
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                     </button>
                                 </a>
                                 <ul class="dropdown-menu absolute hidden text-gray-700">
-                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.reacreditacion')}}">Reacreditacion</a></li>
-                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.plan')}}">Plan Estrategico</a></li>
+                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.reacreditacion')}}">Reacreditación</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.plan')}}">Plan Estratégico</a></li>
                                     <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.otro')}}">Otros Documentos</a></li>
                                 </ul>
                             </div>
@@ -97,14 +97,14 @@
                             <div class="dropdown inline-block relative">
                                 <a href="{{route('investigacion')}}">
                                     <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
-                                        <span class="mr-1">Investigacion</span>
+                                        <span class="mr-1">Investigación</span>
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                     </button>
                                 </a>
                                 <ul class="dropdown-menu absolute hidden text-gray-700">
                                     <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('investigacion.listaProyectos')}}">Todos los Proyectos</a></li>
                                     <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('investigacion.listaPublicaciones')}}">Todas las Publicaciones</a></li>
-                                    <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('investigacion')}}">Listado por Academico</a></li>
+                                    <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('investigacion')}}">Listado por Académico</a></li>
                                 </ul>
                             </div>
                         </div>

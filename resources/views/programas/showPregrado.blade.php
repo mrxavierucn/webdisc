@@ -4,7 +4,7 @@
 
 @section('content')
 <br>
-<div class="bg-gray-200  shadow overflow-hidden sm:rounded-lg">
+<div class="bg-gray-200  shadow overflow-hidden sm:rounded-lg font-source">
     <div class="px-4 py-5 sm:px-6 border border-gray-200">
       <h3 class="text-lg leading-6 font-medium text-gray-900">
         {{$pregrado->nombre}}
@@ -22,7 +22,7 @@
         </div>
         <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
           <dt class="text-sm font-medium text-gray-500">
-            Titulo Profesional:
+            Título Profesional:
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
             {{$pregrado->titulo}}
@@ -30,7 +30,7 @@
         </div>
         <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
           <dt class="text-sm font-medium text-gray-500">
-            Grado Academico:
+            Grado Académico:
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
             {{$pregrado->gradoAcademico}}
@@ -38,7 +38,7 @@
         </div>
         <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
           <dt class="text-sm font-medium text-gray-500">
-            Area (Sub-area) de Conocimiento:
+            Área (Sub-área) de Conocimiento:
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
             {{$pregrado->area}} ({{$pregrado->subarea}})
@@ -46,7 +46,7 @@
         </div>
         <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
           <dt class="text-sm font-medium text-gray-500">
-            Duracion:
+            Duración:
           </dt>
           <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
             {{$pregrado->duracion}} Semestres.
@@ -54,7 +54,7 @@
         </div>
         <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
             <dt class="text-sm font-medium text-gray-500">
-              Acreditacion:
+              Acreditación:
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
               {{$pregrado->acreditacion}}
@@ -71,7 +71,7 @@
           @if ($pregrado->url)
           <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
             <dt class="text-sm font-medium text-gray-500">
-              Mas informacion en:
+              Mas información en:
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 <a href="{{$pregrado->url}}" target="_blank" class="hover:underline">{{$pregrado->url}}</a>

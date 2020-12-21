@@ -4,11 +4,11 @@
 
 @section('content')
 
-<h1 class="text-center">Academicos Permanentes</h1>
+<h1 class="text-center font-source">Académicos Permanentes</h1>
 <br>
-<p class="mx-2">Estos son los Academicos propios del Departamento: </p>
+<p class="mx-2 font-source">Estos son los Académicos propios del Departamento: </p>
 <br>
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border border-gray-200 sm:rounded-lg">
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
-                                                <a href="{{route('academicos.show',$permanente)}}">{{$permanente->nombre}}</a>
+                                                <a href="{{route('academicos.show',$permanente)}}" class="hover:underline">{{$permanente->nombre}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    Academico Permanente
+                                    Académico Permanente
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     @auth
@@ -82,5 +82,5 @@
     </div>
 </div>
 <br>
-<li class="hover:underline px-2"><a href="{{route('academicos')}}">Volver a la pagina anterior</a></li>
+<li class="hover:underline px-2"><a href="{{route('academicos')}}">Volver a la página anterior</a></li>
 @endsection

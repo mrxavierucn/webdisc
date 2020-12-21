@@ -10,10 +10,10 @@
 <form action="{{route('programas.updatePregrado',$pregrado)}}"method="POST">
     @csrf
     @method('put')
-    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg">
+    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg font-source">
         <div class="px-4 py-5 sm:px-6 border border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Ingrese la informacion solicitada
+                Ingrese la información solicitada
             </h3>
         </div>
         <div class="border-t border-gray-200">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Titulo Profesional*
+                        Título Profesional*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="titulo" value="{{old('titulo',$pregrado->titulo)}}">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Grado Academico*
+                        Grado Académico*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="gradoAcademico" value="{{old('gradoAcademico',$pregrado->gradoAcademico)}}">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Area*
+                        Área*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="area" value="{{old('area',$pregrado->area)}}">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Sub-Area*
+                        Sub-Área*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="subarea" value="{{old('subarea',$pregrado->subarea)}}">
@@ -92,7 +92,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Duracion en Semestres*
+                        Duración en Semestres*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="duracion" value="{{old('duracion',$pregrado->duracion)}}">
@@ -104,7 +104,7 @@
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        Estado de Acreditacion*
+                        Estado de Acreditación*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="acreditacion" value="{{old('acreditacion',$pregrado->acreditacion)}}">

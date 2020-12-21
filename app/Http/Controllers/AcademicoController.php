@@ -38,7 +38,6 @@ class AcademicoController extends Controller
                 'foto'=>$url,
             ]);
         }
-
         return redirect()->route('academicos.show',$academico);
     }
 

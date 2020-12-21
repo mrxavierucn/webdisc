@@ -3,9 +3,9 @@
 @section('title',$academico->nombre)
 
 @section('content')
-<h1 class="text-center">Cuerpo Academico</h1>
+<h1 class="text-center font-source">Cuerpo Academico</h1>
 <br>
-<div class="flex justify-center">
+<div class="flex justify-center font-source">
     <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
         @if ($academico->foto)
             <img class="w-full" src="{{asset($academico->foto)}}" alt="">
@@ -24,7 +24,7 @@
             <br>
             <p class="text-grey-darker text-base font-source">
                 @if ($academico->permanencia=='permanente')
-                    Permanencia: Academico Permanente.
+                    Permanencia: Académico Permanente.
                 @else
                     @if (($academico->permanencia=='temporal'))
                         Permanencia: Planta Temporal.
@@ -35,12 +35,12 @@
             </p>
             <br>
             @auth
-                <p class="text-grey-darker text-base font-source hover:underline"><a href="{{route('academicos.edit',$academico)}}">Modificar Academico</a></p>
+                <p class="text-grey-darker text-base font-source hover:underline"><a href="{{route('academicos.edit',$academico)}}">Modificar Académico</a></p>
                 <br>
                 <form action="{{route('academicos.destroy',$academico)}}" METHOD="POST">
                     @csrf
                     @method('delete')
-                    <button class="text-grey-darker text-base font-source hover:underline" onclick="return confirm('¿Esta seguro que desea eliminar a este academico?')" type="submit">Eliminar Academico</button>
+                    <button class="text-grey-darker text-base font-source hover:underline" onclick="return confirm('¿Esta seguro que desea eliminar a este academico?')" type="submit">Eliminar Académico</button>
                 </form>
             @endauth
         </div>

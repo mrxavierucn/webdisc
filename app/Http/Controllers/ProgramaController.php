@@ -210,13 +210,14 @@ class ProgramaController extends Controller
             'coordinador'=>$request->coordinador,
             'descripcion'=>$request->descripcion,
             'duracion'=>$request->duracion,
-            'malla'=>$request->malla,
+            'cuerpo'=>'',
+            'malla'=>'',
         ]);
         if($request->malla){
             $archivo = $request->file('malla')->store('mallaPosttitulo');
-            $malla=Storage::url($archivo);
+            $url=Storage::url($archivo);
             $posttitulo->update([
-            'malla'=>$malla,
+                'malla'=>$url,
             ]);
         }
 
@@ -252,6 +253,7 @@ class ProgramaController extends Controller
             'descripcion'=>$request->descripcion,
             'duracion'=>$request->duracion,
             'malla'=>$request->malla,
+            'cuerpo'=>$request->cuerpo,
         ]);
 
         return redirect()->route('programas.showPosttitulo',$posttitulo);

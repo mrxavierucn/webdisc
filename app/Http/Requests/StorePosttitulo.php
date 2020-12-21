@@ -24,7 +24,7 @@ class StorePosttitulo extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|unique:postgrados|min:10|max:200',
+            'nombre'=>'required|unique:posttitulos|min:10|max:200',
             'coordinador'=>'required|min:10|max:150',
             'malla'=>'image',
             'duracion'=>'required|integer',

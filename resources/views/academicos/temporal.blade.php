@@ -4,11 +4,11 @@
 
 @section('content')
 
-<h1 class="text-center">Academicos de Planta Temporal</h1>
+<h1 class="text-center font-source">Académicos de Planta Temporal</h1>
 <br>
-<p class="mx-2">Estos son los Academicos de la planta temporal del Departamento: </p>
+<p class="mx-2 font-source">Estos son los Académicos de la planta temporal del Departamento: </p>
 <br>
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border border-gray-200 sm:rounded-lg">
@@ -82,5 +82,5 @@
     </div>
 </div>
 <br>
-<li class="hover:underline px-2"><a href="{{route('academicos')}}">Volver a la pagina anterior</a></li>
+<li class="hover:underline px-2 font-source"><a href="{{route('academicos')}}">Volver a la página anterior</a></li>
 @endsection

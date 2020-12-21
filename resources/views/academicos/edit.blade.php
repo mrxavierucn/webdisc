@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1 class="px-2">Modificar Academico</h1>
+<h1 class="px-2 text-center font-source">Modificar Académico</h1>
 <br>
 @auth
 <form action="{{route('academicos.update',$academico)}}"method="POST">
@@ -13,7 +13,7 @@
     <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6 border border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Ingrese la informacion solicitada
+                Ingrese la información solicitada
             </h3>
         </div>
         <div class="border-t border-gray-200">
@@ -48,7 +48,7 @@
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <select class="border rounded border-gray-300 w-60" name="permanencia">
-                        <option {{($academico->permanencia)=='permanente' ? 'selected' : '' }} value="permanente">Academico Permanente</option>
+                        <option {{($academico->permanencia)=='permanente' ? 'selected' : '' }} value="permanente">Académico Permanente</option>
                         <option {{($academico->permanencia)=='temporal' ? 'selected' : '' }} value="temporal">Planta Temporal</option>
                         <option {{($academico->permanencia)=='apoyo' ? 'selected' : '' }} value="apoyo">Personal de Apoyo</option>
                     </select>

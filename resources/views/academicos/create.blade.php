@@ -4,15 +4,15 @@
 
 @section('content')
 
-<h1 class="px-2">Añadir un Nuevo Academico</h1>
+<h1 class="px-2 text-center font-source">Añadir un Nuevo Académico</h1>
 <br>
 @auth
 <form action="{{route('academicos.store')}}"method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg">
+    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg font-source">
         <div class="px-4 py-5 sm:px-6 border border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Ingrese la informacion solicitada
+                Ingrese la información solicitada
             </h3>
         </div>
         <div class="border-t border-gray-200">
@@ -47,7 +47,7 @@
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <select class="border rounded border-gray-300 w-60" name="permanencia">
-                        <option value="permanente">Academico Permanente</option>
+                        <option value="permanente">Académico Permanente</option>
                         <option value="temporal">Planta Temporal</option>
                         <option value="apoyo">Personal de Apoyo</option>
                     </select>
@@ -70,7 +70,7 @@
 
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 w-32" type="submit">Añadir Academico</button>
+                        <button class="border rounded border-black hover:bg-cool-gray-300 bg-gray-200 w-32" type="submit">Añadir Académico</button>
                     </dd>
                 </div>
             </dl>

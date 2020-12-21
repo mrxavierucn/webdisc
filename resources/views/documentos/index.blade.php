@@ -4,9 +4,9 @@
 
 @section('content')
 
-<h1 class="text-center">Documentos de Interes</h1>
+<h1 class="text-center font-source">Documentos de Interés</h1>
 <br>
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -14,10 +14,10 @@
                     <thead class="bg-gray-200">
                         <tr>
                             <th scope="col" class="px-20 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Titulo
+                                Título
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Descripcion
+                                Descripción
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Descarga
@@ -76,10 +76,10 @@
                     <thead class="bg-gray-200">
                         <tr>
                             <th scope="col" class="px-20 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Titulo
+                                Título
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Descripcion
+                                Descripción
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Descarga
@@ -138,10 +138,10 @@
                     <thead class="bg-gray-200">
                         <tr>
                             <th scope="col" class="px-20 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Titulo
+                                Título
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Descripcion
+                                Descripción
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Descarga

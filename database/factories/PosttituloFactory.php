@@ -29,6 +29,7 @@ class PosttituloFactory extends Factory
             'coordinador'=>$this->faker->name(),
             'duracion'=>$this->faker->numberBetween(0,20),
             'descripcion'=>$this->faker->sentence(),
+            'cuerpo'=>$this->faker->name(),
         ];
     }
 }

@@ -21,6 +21,7 @@ class CreatePosttitulosTable extends Migration
             $table->string('malla')->nullable();
             $table->unsignedTinyInteger('duracion');
             $table->text('descripcion');
+            $table->string('cuerpo')->nullable;
             $table->timestamps();
         });
     }

@@ -4,13 +4,13 @@
 
 @section('content')
 
-<h1 class="text-center">Cuerpo Academico</h1>
+<h1 class="text-center font-source">Cuerpo Académico</h1>
 <br>
 @auth
-<li class="hover:underline px-2"><a href="{{route('academicos.create')}}">Añadir Academico</a></li>
+<li class="hover:underline px-2 font-source"><a href="{{route('academicos.create')}}">Añadir Académico</a></li>
 <br>
 @endauth
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -58,7 +58,7 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    Academico Permanente
+                                    Académico Permanente
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 </td>
@@ -80,7 +80,7 @@
 </div>
 <br>
 <br>
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -150,7 +150,7 @@
 </div>
 <br>
 <br>
-<div class="flex flex-col">
+<div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-64">
             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
