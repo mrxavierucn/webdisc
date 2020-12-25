@@ -27,6 +27,7 @@ class StoreAcademico extends FormRequest
         return [
             'nombre'=>'required|unique:academicos|min:10|max:150',
             'rol'=>'max:50',
+            'correo'=>'required|unique:academicos',
             'foto'=>'image'
         ];
     }
@@ -39,6 +40,8 @@ class StoreAcademico extends FormRequest
             'nombre.min'=>'El nombre debe tener como minimo 10 caracteres',
             'nombre.max'=>'El nombre debe tener como maximo 150 caracteres',
             'rol.max'=>'El rol puede tener como maximo 50 caracteres',
+            'correo.required'=>'El academico debe tener un correo',
+            'correo.unique'=>'Ya existe un academico con ese correo',
             'foto.image'=>'Archivo invalido. Asegurese de haber subido un archivo de tipo imagen.'
         ];
     }

@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Academicos')
+@section('title','Académicos Permanentes')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                                 Nombre
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Rol
+                                Correo
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Tipo
@@ -49,11 +49,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if ($permanente->rol)
-                                        <div class="text-sm text-gray-900">{{$permanente->rol}}</div>
-                                    @else
-                                        <div class="text-sm text-gray-900">--</div>
-                                    @endif
+                                    <div class="text-sm text-gray-900">{{$permanente->correo}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     Académico Permanente

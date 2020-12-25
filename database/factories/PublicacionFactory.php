@@ -22,7 +22,7 @@ class PublicacionFactory extends Factory
      */
     public function definition()
     {
-        $nombre=$this->faker->name();
+        $nombre=$this->faker->unique()->name();
         return [
             'nombre'=>$nombre,
             'slug'=>Str::slug($nombre,'-'),

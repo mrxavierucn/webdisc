@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Programas')
+@section('title','Programas de Pre-Grado')
 
 @section('content')
 <h1 class="text-center font-source">Programas de Pre-Grado del Departamento</h1>

@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProgramaController;
 use App\Http\Controllers\AcademicoController;
 use App\Http\Controllers\NoticiaController;
-use App\Http\Controllers\HistoriaController;
 use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\InvestigacionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
@@ -24,7 +23,9 @@ use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('historia',[HistoriaController::class,'index'])->name('historia');
+Route::get('historia',[HomeController::class,'historia'])->name('historia');
+
+Route::get('contactenos',[HomeController::class,'contacto'])->name('contacto');
 
 //programas
 
@@ -112,6 +113,14 @@ Route::get('documentos/reacreditacion', [DocumentoController::class,'reacreditac
 
 Route::get('documentos/plan', [DocumentoController::class,'plan'])->name('documentos.plan');
 
+Route::get('documentos/reglamento', [DocumentoController::class,'reglamento'])->name('documentos.reglamento');
+
+Route::get('documentos/libro', [DocumentoController::class,'libro'])->name('documentos.libro');
+
+Route::get('documentos/titulacion', [DocumentoController::class,'titulacion'])->name('documentos.titulacion');
+
+Route::get('documentos/practica', [DocumentoController::class,'practica'])->name('documentos.practica');
+
 Route::get('documentos/otro', [DocumentoController::class,'otro'])->name('documentos.otro');
 
 Route::get('documentos/{documento}', [DocumentoController::class,'show'])->name('documentos.show');
@@ -195,13 +204,13 @@ Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[Inve
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
 })->name('dashboard');
-/*
+
 Route::middleware('auth')->get('/register', function () {
     return view('auth.register');
 })->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])->middleware(['auth']);
-*/
+
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
 });

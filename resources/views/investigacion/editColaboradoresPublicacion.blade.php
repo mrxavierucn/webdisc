@@ -7,7 +7,7 @@
 <h1 class="px-2">Cambiar Colaboradores</h1>
 <br>
 @auth
-<div class="container mx-2">
+<div class="container mx-2 font-source">
     <table class="table text-left">
         <thead>
             <tr>

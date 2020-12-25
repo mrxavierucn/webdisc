@@ -48,10 +48,14 @@
                         <select class="border rounded border-gray-300 w-60" name="tipo">
                             <option value="reacreditacion">Reacreditación de Programa</option>
                             <option value="plan">Plan Estratégico</option>
+                            <option value="reglamento">Reglamento</option>
+                            <option value="libro">Libro de Carreras</option>
+                            <option value="titulacion">Titulación</option>
+                            <option value="practica">Practicas</option>
                             <option value="otro">Otros</option>
                         </select>
                     </dd>
-                    </div>
+                </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500 ">
                         Archivo*

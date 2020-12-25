@@ -22,7 +22,7 @@ class NoticiaFactory extends Factory
      */
     public function definition()
     {
-        $titulo=$this->faker->name();
+        $titulo=$this->faker->unique()->name();
         return [
             'titulo'=>$titulo,
             'slug'=>Str::slug($titulo,'-'),

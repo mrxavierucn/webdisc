@@ -22,11 +22,12 @@ class AcademicoFactory extends Factory
      */
     public function definition()
     {
-        $nombre=$this->faker->name();
+        $nombre=$this->faker->unique()->name();
         return [
             'nombre'=>$nombre,
             'slug'=>Str::slug($nombre,'-'),
             'rol'=>$this->faker->sentence(),
+            'correo'=>$this->faker->email(),
             'permanencia'=>$this->faker->randomElement(['permanente','temporal','apoyo']),
         ];
     }

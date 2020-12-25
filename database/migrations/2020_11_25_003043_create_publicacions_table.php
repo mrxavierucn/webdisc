@@ -15,7 +15,7 @@ class CreatePublicacionsTable extends Migration
     {
         Schema::create('publicacions', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('nombre')->unique();
             $table->string('slug');
             $table->string('traduccion')->nullable();
             $table->string('revista');

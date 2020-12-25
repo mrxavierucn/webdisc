@@ -9,10 +9,10 @@
 @auth
 <form action="{{route('investigacion.storeProyecto')}}"method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg">
+    <div class="bg-gray-200 shadow overflow-hidden sm:rounded-lg font-source">
         <div class="px-4 py-5 sm:px-6 border border-gray-200">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Ingrese la informacion solicitada
+                Ingrese la información solicitada
             </h3>
         </div>
         <div class="border-t border-gray-200">

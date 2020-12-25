@@ -89,6 +89,10 @@
                                 <ul class="dropdown-menu absolute hidden text-gray-700">
                                     <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.reacreditacion')}}">Reacreditación</a></li>
                                     <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.plan')}}">Plan Estratégico</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.reglamento')}}">Reglamento</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.libro')}}">Libro de Carreras</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.titulacion')}}">Titulación</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.practica')}}">Practicas</a></li>
                                     <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion  px-3 py-2 block whitespace-no-wrap" href="{{route('documentos.otro')}}">Otros Documentos</a></li>
                                 </ul>
                             </div>
@@ -113,6 +117,15 @@
                                 <a href="{{route('noticias')}}">
                                     <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
                                         <span>Portal de Noticias</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="dropdown inline-block relative">
+                                <a href="{{route('contacto')}}">
+                                    <button class="text-white hover:bg-banner-opcion px-3 py-2 rounded-md text-sm font-medium">
+                                        <span>Contáctenos</span>
                                     </button>
                                 </a>
                             </div>
@@ -241,6 +254,15 @@
                         <a href="{{route('noticias')}}">
                             <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
                                 <span>Portal de Noticias</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="dropdown inline-block relative">
+                        <a href="{{route('contacto')}}">
+                            <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
+                                <span>Contáctenos</span>
                             </button>
                         </a>
                     </div>

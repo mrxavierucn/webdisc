@@ -29,6 +29,7 @@ class AcademicoController extends Controller
             'nombre'=>$request->nombre,
             'slug'=>$slug,
             'rol'=>$request->rol,
+            'correo'=>$request->correo,
             'permanencia'=>$request->permanencia
         ]);
         if($request->foto){
@@ -76,6 +77,10 @@ class AcademicoController extends Controller
                 'max:150'
             ],
             'rol'=>'max:50',
+            'correo'=>[
+                'required',
+                Rule::unique('academicos')->ignore($academico),
+            ],
             'foto'=>'image'
         ]);
         $slug=Str::slug($request->nombre,'-');
@@ -83,6 +88,7 @@ class AcademicoController extends Controller
             'nombre'=>$request->nombre,
             'slug'=>$slug,
             'rol'=>$request->rol,
+            'correo'=>$request->correo,
             'permanencia'=>$request->permanencia
         ]);
 

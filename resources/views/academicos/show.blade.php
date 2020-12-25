@@ -15,6 +15,10 @@
         <div class="px-6 py-4 bg-gray-50">
             <div class="font-bold text-xl mb-2 font-source">{{$academico->nombre}}</div>
             <p class="text-grey-darker text-base font-source">
+                {{$academico->correo}}
+            </p>
+            <br>
+            <p class="text-grey-darker text-base font-source">
                 @if ($academico->rol)
                     Rol: {{$academico->rol}}.
                 @else

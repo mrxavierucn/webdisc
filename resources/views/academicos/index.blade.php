@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Academicos')
+@section('title','Cuerpo Académico')
 
 @section('content')
 
@@ -21,7 +21,7 @@
                                 Nombre
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Rol
+                                Correo
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Tipo
@@ -51,11 +51,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if ($permanente->rol)
-                                        <div class="text-sm text-gray-900">{{$permanente->rol}}</div>
-                                    @else
-                                        <div class="text-sm text-gray-900">--</div>
-                                    @endif
+                                    <div class="text-sm text-gray-900">{{$permanente->correo}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     Académico Permanente
@@ -91,7 +87,7 @@
                                 Nombre
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Rol
+                                Correo
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Tipo
@@ -121,11 +117,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if ($temporal->rol)
-                                        <div class="text-sm text-gray-900">{{$temporal->rol}}</div>
-                                    @else
-                                        <div class="text-sm text-gray-900">--</div>
-                                    @endif
+                                    <div class="text-sm text-gray-900">{{$temporal->correo}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     Planta Temporal
@@ -161,7 +153,7 @@
                                 Nombre
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                Rol
+                                Correo
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Tipo
@@ -191,11 +183,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    @if ($apoyo->rol)
-                                        <div class="text-sm text-gray-900">{{$apoyo->rol}}</div>
-                                    @else
-                                        <div class="text-sm text-gray-900">--</div>
-                                    @endif
+                                    <div class="text-sm text-gray-900">{{$apoyo->correo}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     Personal de Apoyo a la Academia

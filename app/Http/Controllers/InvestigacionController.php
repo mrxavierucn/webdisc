@@ -107,9 +107,8 @@ class InvestigacionController extends Controller
             $proyecto->academicos()->detach($academico->id);
         }
         $proyecto->delete();
-        $proyectos=Proyecto::orderBy('nombre','asc')->paginate();
 
-        return redirect()->route('investigacion.listaProyectos',$proyectos);
+        return redirect()->route('investigacion.listaProyectos');
     }
 
     public function destroyColaboradoresProyecto(Academico $academico,Proyecto $proyecto){
@@ -213,9 +212,8 @@ class InvestigacionController extends Controller
             $publicacion->academicos()->detach($academico->id);
         }
         $publicacion->delete();
-        $publicaciones=Publicacion::orderBy('nombre','asc')->paginate();
 
-        return redirect()->route('investigacion.listaPublicaciones',$publicaciones);
+        return redirect()->route('investigacion.listaPublicaciones');
     }
 
     public function destroyColaboradoresPublicacion(Academico $academico,Publicacion $publicacion){

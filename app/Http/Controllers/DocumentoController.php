@@ -14,9 +14,13 @@ class DocumentoController extends Controller
     public function index(){
         $reacreditacions=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'reacreditacion')->paginate(3);
         $plans=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'plan')->paginate(3);
+        $reglamentos=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'reglamento')->paginate(3);
+        $libros=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'libro')->paginate(3);
+        $titulacions=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'titulacion')->paginate(3);
+        $practicas=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'practica')->paginate(3);
         $otros=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'otro')->paginate(3);
 
-        return view('documentos.index',compact('reacreditacions','plans','otros'));
+        return view('documentos.index',compact('reacreditacions','plans','reglamentos','libros','titulacions','practicas','otros'));
     }
 
     public function create(){
@@ -53,6 +57,30 @@ class DocumentoController extends Controller
         $plans=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'plan')->paginate(Documento::count());
 
         return view('documentos.plan',compact('plans'));
+    }
+
+    public function reglamento(){
+        $reglamentos=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'reglamento')->paginate(Documento::count());
+
+        return view('documentos.reglamento',compact('reglamentos'));
+    }
+
+    public function libro(){
+        $libros=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'libro')->paginate(Documento::count());
+
+        return view('documentos.libro',compact('libros'));
+    }
+
+    public function titulacion(){
+        $titulacions=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'titulacion')->paginate(Documento::count());
+
+        return view('documentos.titulacion',compact('titulacions'));
+    }
+
+    public function practica(){
+        $practicas=Documento::orderBy('titulo','asc')->where('tipo', "LIKE", 'practica')->paginate(Documento::count());
+
+        return view('documentos.practica',compact('practicas'));
     }
 
     public function otro(){

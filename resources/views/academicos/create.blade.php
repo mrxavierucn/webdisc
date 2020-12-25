@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Crear Academico')
+@section('title','Crear Académico')
 
 @section('content')
 
@@ -40,6 +40,18 @@
                             <small>*{{$message}}</small>
                         @enderror
                 </dd>
+                </div>
+                <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                    <dt class="text-sm font-medium text-gray-500">
+                        Correo*
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <input class="border rounded border-gray-300 w-96" type="text" name="correo" value="{{old('correo')}}">
+                            @error('correo')
+                                <br>
+                                <small>*{{$message}}</small>
+                            @enderror
+                    </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">

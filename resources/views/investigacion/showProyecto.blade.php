@@ -6,7 +6,7 @@
 
 <h1>Proyecto</h1>
 <br>
-<div class="bg-gray-200  shadow overflow-hidden sm:rounded-lg">
+<div class="bg-gray-200  shadow overflow-hidden sm:rounded-lg font-source">
     <div class="px-4 py-5 sm:px-6 border border-gray-200">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
             {{$proyecto->nombre}}

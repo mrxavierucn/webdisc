@@ -49,10 +49,28 @@
                         <select class="border rounded border-gray-300 w-60" name="tipo">
                             <option {{($documento->tipo)=='reacreditacion' ? 'selected' : '' }} value="reacreditacion">Reacreditación de Programa</option>
                             <option {{($documento->tipo)=='plan' ? 'selected' : '' }} value="plan">Plan Estratégico</option>
+                            <option {{($documento->tipo)=='reglamento' ? 'selected' : '' }} value="reglamento">Reglamento</option>
+                            <option {{($documento->tipo)=='libro' ? 'selected' : '' }} value="libro">Libro de Carreras</option>
+                            <option {{($documento->tipo)=='titulacion' ? 'selected' : '' }} value="titulacion">Titulación</option>
+                            <option {{($documento->tipo)=='practica' ? 'selected' : '' }} value="practica">Practicas</option>
                             <option {{($documento->tipo)=='otro' ? 'selected' : '' }} value="otro">Otros</option>
                         </select>
                     </dd>
-                    </div>
+                </div>
+                <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                    <dt class="text-sm font-medium text-gray-500 ">
+                        Archivo*
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="enlace" id="" accept=".doc,.docx,application/msword,
+                        application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                        .pdf,.txt,.xlsx,.xls,.pptx,.ppt">
+                        @error('enlace')
+                            <br>
+                            <small>*{{$message}}</small>
+                        @enderror
+                    </dd>
+                </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
 

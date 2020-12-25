@@ -20,7 +20,7 @@
     <div class="container">
         <div class="w-screen h-40 bg-banner">
             <a href="http://www.ucn.cl" target="_blank">
-                <img class="float-left mx-5 my-10 sm:mx-auto sm:w-30" src="http://www.disc.ucn.cl/wp-content/themes/disc/img/logo-ucn.png" width="300" height="70" scale="0">
+                <img class="float-left mx-5 my-10" src="http://www.disc.ucn.cl/wp-content/themes/disc/img/logo-ucn.png" width="300" height="70" scale="0">
             </a>
             <h1 class="text-2xl text-gray-300 text-right px-24 py-8 font-source"><a href="{{route('home')}}">Departamento de Ingeniería de <br>Sistemas y Computación</a></h1>
         </div>
