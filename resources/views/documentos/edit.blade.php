@@ -58,20 +58,6 @@
                     </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
-                    <dt class="text-sm font-medium text-gray-500 ">
-                        Archivo*
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input type="file" name="enlace" id="" accept=".doc,.docx,application/msword,
-                        application/vnd.openxmlformats-officedocument.wordprocessingml.document,
-                        .pdf,.txt,.xlsx,.xls,.pptx,.ppt">
-                        @error('enlace')
-                            <br>
-                            <small>*{{$message}}</small>
-                        @enderror
-                    </dd>
-                </div>
-                <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
 
                     </dt>

@@ -87,7 +87,9 @@ Route::get('academicos/create', [AcademicoController::class,'create'])->name('ac
 
 Route::post('academicos', [AcademicoController::class,'store'])->name('academicos.store');
 
-Route::get('academicos/permanente', [AcademicoController::class,'permanente'])->name('academicos.permanente');
+Route::get('academicos/oficial', [AcademicoController::class,'oficial'])->name('academicos.oficial');
+
+Route::get('academicos/especial', [AcademicoController::class,'especial'])->name('academicos.especial');
 
 Route::get('academicos/temporal', [AcademicoController::class,'temporal'])->name('academicos.temporal');
 

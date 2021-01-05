@@ -121,22 +121,12 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="dropdown inline-block relative">
-                                <a href="{{route('contacto')}}">
-                                    <button class="text-white hover:bg-banner-opcion px-3 py-2 rounded-md text-sm font-medium">
-                                        <span>Contáctenos</span>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
             @auth
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-
                 <!-- Profile dropdown -->
                 <div class="ml-3 relative" x-data="{ open: false }">
                     <div>
@@ -164,6 +154,15 @@
                     </div>
                 </div>
             </div>
+            <div class="">
+                <div class="dropdown inline-block relative">
+                    <a href="{{route('register')}}">
+                        <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
+                            <span>Registrarse</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
             @else
                     <div class="">
                         <div class="dropdown inline-block relative">
@@ -174,15 +173,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="dropdown inline-block relative">
-                            <a href="{{route('register')}}">
-                                <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
-                                    <span>Registrarse</span>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+
             @endauth
 
         </div>
@@ -254,15 +245,6 @@
                         <a href="{{route('noticias')}}">
                             <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
                                 <span>Portal de Noticias</span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="">
-                    <div class="dropdown inline-block relative">
-                        <a href="{{route('contacto')}}">
-                            <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
-                                <span>Contáctenos</span>
                             </button>
                         </a>
                     </div>

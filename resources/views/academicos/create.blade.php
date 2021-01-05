@@ -59,8 +59,9 @@
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <select class="border rounded border-gray-300 w-60" name="permanencia">
-                        <option value="permanente">Académico Permanente</option>
-                        <option value="temporal">Planta Temporal</option>
+                        <option value="oficial">Académico de Planta Oficial</option>
+                        <option value="especial">Académico de Planta Especial</option>
+                        <option value="temporal">Acadédimo de Planta Temporal</option>
                         <option value="apoyo">Personal de Apoyo</option>
                     </select>
                 </dd>

@@ -60,7 +60,8 @@
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <select class="border rounded border-gray-300 w-60" name="permanencia">
-                        <option {{($academico->permanencia)=='permanente' ? 'selected' : '' }} value="permanente">Académico Permanente</option>
+                        <option {{($academico->permanencia)=='oficial' ? 'selected' : '' }} value="oficial">Académico de Planta Oficial</option>
+                        <option {{($academico->permanencia)=='especial' ? 'selected' : '' }} value="especial">Académico de Planta Especial</option>
                         <option {{($academico->permanencia)=='temporal' ? 'selected' : '' }} value="temporal">Planta Temporal</option>
                         <option {{($academico->permanencia)=='apoyo' ? 'selected' : '' }} value="apoyo">Personal de Apoyo</option>
                     </select>

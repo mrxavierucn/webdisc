@@ -1,12 +1,12 @@
 @extends('layouts.plantilla')
 
-@section('title','Planta Temporal')
+@section('title','Académicos de Planta Especial')
 
 @section('content')
 
-<h1 class="text-center font-source">Académicos de Planta Temporal</h1>
+<h1 class="text-center font-source">Académicos de Planta Especial</h1>
 <br>
-<p class="mx-2 font-source">Estos son los Académicos de la planta temporal del Departamento: </p>
+<p class="mx-2 font-source">Estos son los Académicos propios del Departamento: </p>
 <br>
 <div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
@@ -30,38 +30,38 @@
                         </tr>
                     </thead>
                     <tbody class="bg-gray-50 divide-y divide-gray-200">
-                        @foreach ($temporales as $temporal)
+                        @foreach ($especiales as $especial)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
-                                            @if ($temporal->foto)
-                                                <img class="h-10 w-10 rounded-full" src="{{asset($temporal->foto)}}" alt="">
+                                            @if ($especial->foto)
+                                                <img class="h-10 w-10 rounded-full" src="{{asset($especial->foto)}}" alt="">
                                             @else
                                                 <img class="h-10 w-10 rounded-full" src="{{asset('/storage/default.jpg')}}" alt="">
                                             @endif
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900">
-                                                <a href="{{route('academicos.show',$temporal)}}">{{$temporal->nombre}}</a>
+                                                <a href="{{route('academicos.show',$especial)}}" class="hover:underline">{{$especial->nombre}}</a>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{$temporal->correo}}</div>
+                                    <div class="text-sm text-gray-900">{{$especial->correo}}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    Académico de Planta Temporal
+                                    Académico de Planta Especial
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     @auth
                                     <div>
-                                        <a href="{{route('academicos.edit',$temporal)}}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
+                                        <a href="{{route('academicos.edit',$especial)}}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
                                     </div>
                                     <br>
                                     <div>
-                                        <form action="{{route('academicos.destroy',$temporal)}}" METHOD="POST">
+                                        <form action="{{route('academicos.destroy',$especial)}}" METHOD="POST">
                                             @csrf
                                             @method('delete')
                                             <button class="text-indigo-600 font-semibold hover:text-indigo-900" onclick="return confirm('¿Esta seguro que desea eliminar a este academico?')" type="submit">Eliminar</button>
@@ -78,5 +78,5 @@
     </div>
 </div>
 <br>
-<li class="hover:underline px-2 font-source"><a href="{{route('academicos')}}">Volver a la página anterior</a></li>
+<li class="hover:underline px-2"><a href="{{route('academicos')}}">Volver a la página anterior</a></li>
 @endsection

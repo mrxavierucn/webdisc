@@ -27,13 +27,17 @@
             </p>
             <br>
             <p class="text-grey-darker text-base font-source">
-                @if ($academico->permanencia=='permanente')
-                    Permanencia: Académico Permanente.
+                @if ($academico->permanencia=='oficial')
+                    Académico de Planta Oficial.
                 @else
-                    @if (($academico->permanencia=='temporal'))
-                        Permanencia: Planta Temporal.
+                    @if ($academico->permanencia=='especial')
+                        Académico de Planta Especial.
                     @else
-                        Permanencia: Personal de Apoyo a la Academia.
+                        @if ($academico->permanencia=='temporal')
+                            Académico de Planta Temporal
+                        @else
+                            Personal de Apoyo a la Academia.
+                        @endif
                     @endif
                 @endif
             </p>

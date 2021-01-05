@@ -12,7 +12,8 @@ use Illuminate\Support\Str;
 class AcademicoController extends Controller
 {
     public function index(){
-        $permanentes=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'permanente')->paginate(3);
+        $oficiales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'oficial')->paginate(3);
+        $especiales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'especial')->paginate(3);
         $temporales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'temporal')->paginate(3);
         $apoyos=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'apoyo')->paginate(3);
 
@@ -42,10 +43,16 @@ class AcademicoController extends Controller
         return redirect()->route('academicos.show',$academico);
     }
 
-    public function permanente(){
-        $permanentes=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'permanente')->paginate(Academico::count());
+    public function oficial(){
+        $oficiales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'oficial')->paginate(Academico::count());
 
-        return view('academicos.permanente',compact('permanentes'));
+        return view('academicos.oficial',compact('oficiales'));
+    }
+
+    public function especial(){
+        $especiales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'especial')->paginate(Academico::count());
+
+        return view('academicos.especial',compact('especiales'));
     }
 
     public function temporal(){

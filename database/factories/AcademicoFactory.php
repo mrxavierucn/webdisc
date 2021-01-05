@@ -28,7 +28,7 @@ class AcademicoFactory extends Factory
             'slug'=>Str::slug($nombre,'-'),
             'rol'=>$this->faker->sentence(),
             'correo'=>$this->faker->email(),
-            'permanencia'=>$this->faker->randomElement(['permanente','temporal','apoyo']),
+            'permanencia'=>$this->faker->randomElement(['oficial','especial','temporal','apoyo']),
         ];
     }
 }
