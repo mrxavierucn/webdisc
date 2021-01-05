@@ -1,13 +1,13 @@
 @extends('layouts.plantilla')
 
-@section('title','Cuerpo Académico')
+@section('title','Funcionarios del Departamento')
 
 @section('content')
 
-<h1 class="text-center font-source">Cuerpo Académico</h1>
+<h1 class="text-center font-source">Funcionarios del Departamento</h1>
 <br>
 @auth
-<li class="hover:underline px-2 font-source"><a href="{{route('academicos.create')}}">Añadir Académico</a></li>
+<li class="hover:underline px-2 font-source"><a href="{{route('academicos.create')}}">Añadir Funcionario</a></li>
 <br>
 @endauth
 <div class="flex flex-col font-source">

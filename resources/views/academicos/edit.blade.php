@@ -1,10 +1,10 @@
 @extends('layouts.plantilla')
 
-@section('title','Editar Académico')
+@section('title','Editar Funcionario')
 
 @section('content')
 
-<h1 class="px-2 text-center font-source">Modificar Académico</h1>
+<h1 class="px-2 text-center font-source">Modificar Funcionario</h1>
 <br>
 @auth
 <form action="{{route('academicos.update',$academico)}}"method="POST">
@@ -62,7 +62,7 @@
                     <select class="border rounded border-gray-300 w-60" name="permanencia">
                         <option {{($academico->permanencia)=='oficial' ? 'selected' : '' }} value="oficial">Académico de Planta Oficial</option>
                         <option {{($academico->permanencia)=='especial' ? 'selected' : '' }} value="especial">Académico de Planta Especial</option>
-                        <option {{($academico->permanencia)=='temporal' ? 'selected' : '' }} value="temporal">Planta Temporal</option>
+                        <option {{($academico->permanencia)=='temporal' ? 'selected' : '' }} value="temporal">Académico de Planta Temporal</option>
                         <option {{($academico->permanencia)=='apoyo' ? 'selected' : '' }} value="apoyo">Personal de Apoyo</option>
                     </select>
                 </dd>

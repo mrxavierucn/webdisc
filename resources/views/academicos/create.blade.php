@@ -1,10 +1,10 @@
 @extends('layouts.plantilla')
 
-@section('title','Crear Académico')
+@section('title','Crear Funcionario')
 
 @section('content')
 
-<h1 class="px-2 text-center font-source">Añadir un Nuevo Académico</h1>
+<h1 class="px-2 text-center font-source">Añadir un Nuevo Funcionario</h1>
 <br>
 @auth
 <form action="{{route('academicos.store')}}"method="POST" enctype="multipart/form-data">

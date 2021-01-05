@@ -17,7 +17,7 @@ class AcademicoController extends Controller
         $temporales=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'temporal')->paginate(3);
         $apoyos=Academico::orderBy('nombre','asc')->where('permanencia', "LIKE", 'apoyo')->paginate(3);
 
-        return view('academicos.index',compact('permanentes','temporales','apoyos'));
+        return view('academicos.index',compact('oficiales','especiales','temporales','apoyos'));
     }
 
     public function create(){
@@ -108,8 +108,10 @@ class AcademicoController extends Controller
 
         $permanencia=$academico->permanencia;
         $academico->delete();
-        if($permanencia=='permanente'){
-            return redirect()->route('academicos.permanente');
+        if($permanencia=='oficial'){
+            return redirect()->route('academicos.oficial');
+        }elseif($permanencia=='especial'){
+            return redirect()->route('academicos.especial');
         }elseif($permanencia=='temporal'){
             return redirect()->route('academicos.temporal');
         }else{

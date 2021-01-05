@@ -52,13 +52,14 @@
                             <div class="dropdown inline-block relative">
                                 <a href="{{route('academicos')}}">
                                     <button class="text-white hover:bg-banner-opcion px-4 py-2 rounded-md text-sm font-medium inline-flex items-center">
-                                        <span class="mr-1">Cuerpo Académico</span>
+                                        <span class="mr-1">Funcionarios del Departamento</span>
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                     </button>
                                 </a>
                                 <ul class="dropdown-menu absolute hidden text-gray-700">
-                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.permanente')}}">Académicos Permanentes</a></li>
-                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.temporal')}}">Planta Temporal</a></li>
+                                    <li class=""><a class="rounded-t bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.oficial')}}">Académicos de Planta Oficial</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.especial')}}">Académicos de Planta Especial</a></li>
+                                    <li class=""><a class="bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.temporal')}}">Académicos de Planta Temporal</a></li>
                                     <li class=""><a class="rounded-b bg-banner text-white hover:bg-banner-opcion px-3 py-2 block whitespace-no-wrap" href="{{route('academicos.apoyo')}}">Personal de Apoyo a la Academia</a></li>
                                 </ul>
                             </div>
@@ -208,7 +209,7 @@
                     <div class="dropdown inline-block relative">
                         <a href="{{route('academicos')}}">
                             <button class="text-white hover:bg-banner-opcion  px-3 py-2 rounded-md text-sm font-medium">
-                                <span>Cuerpo Academico</span>
+                                <span>Funcionarios del Departamento</span>
                             </button>
                         </a>
                     </div>

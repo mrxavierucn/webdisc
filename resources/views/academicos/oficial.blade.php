@@ -6,7 +6,7 @@
 
 <h1 class="text-center font-source">Académicos de Planta Oficial</h1>
 <br>
-<p class="mx-2 font-source">Estos son los Académicos propios del Departamento: </p>
+<p class="mx-2 font-source">Estos son los Académicos de Planta Oficial del Departamento: </p>
 <br>
 <div class="flex flex-col font-source">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-10">
