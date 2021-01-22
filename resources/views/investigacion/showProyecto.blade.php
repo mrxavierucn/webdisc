@@ -24,6 +24,14 @@
             </div>
             <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">
+                    Empresa Fundadora:
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    {{$proyecto->empresa}}
+                </dd>
+            </div>
+            <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                <dt class="text-sm font-medium text-gray-500">
                     Link:
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
@@ -34,7 +42,7 @@
             @if ($academicos->count())
             <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">
-                    Colaboradores:
+                    Colaboradores del Departamento:
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     Nombre:
@@ -53,7 +61,26 @@
             @else
             <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">
-                    Sin Colaboradores
+                    Sin Colaboradores del Departamento
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+
+                </dd>
+            </div>
+            @endif
+            @if ($proyecto->externo)
+            <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                <dt class="text-sm font-medium text-gray-500">
+                    Colaboradores Externos:
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <p style="white-space: pre-line">{{$proyecto->externo}}</p>
+                </dd>
+            </div>
+            @else
+            <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                <dt class="text-sm font-medium text-gray-500">
+                    Sin Colaboradores externos
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
 
@@ -63,13 +90,13 @@
             @auth
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        <a href="{{route('investigacion.editProyecto',$proyecto)}}">Modificar Proyecto</a>
+                        <a href="{{route('investigacion.editProyecto',$proyecto)}}">Modificar Proyecto/Colaboradores Externos</a>
                         <br>
-                        <a href="{{route('investigacion.editColaboradoresProyecto',$proyecto)}}">Cambiar Colaboradores</a>
+                        <a href="{{route('investigacion.editColaboradoresProyecto',$proyecto)}}">Cambiar Colaboradores del Departamento</a>
                         <form action="{{route('investigacion.destroyProyecto',$proyecto)}}" METHOD="POST">
                             @csrf
                             @method('delete')
-                            <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este programa?')">Eliminar Proyecto</button>
+                            <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este proyecto?')">Eliminar Proyecto</button>
                         </form>
                     </dt>
                 </div>

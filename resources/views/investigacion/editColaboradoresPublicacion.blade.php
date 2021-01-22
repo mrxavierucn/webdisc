@@ -1,17 +1,17 @@
 @extends('layouts.plantilla')
 
-@section('title','Cambiar Colaboradores')
+@section('title','Cambiar Co-autores')
 
 @section('content')
 
-<h1 class="px-2">Cambiar Colaboradores</h1>
+<h1 class="px-2">Cambiar Co-autores</h1>
 <br>
 @auth
 <div class="container mx-2 font-source">
     <table class="table text-left">
         <thead>
             <tr>
-                <th class="border border-black bg-cool-gray-200">Colaboradores</th>
+                <th class="border border-black bg-cool-gray-200">Co-autores</th>
                 <th class="border border-black bg-cool-gray-200">Eliminar</th>
             </tr>
         </thead>

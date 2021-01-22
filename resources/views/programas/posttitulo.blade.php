@@ -56,7 +56,7 @@
                                         <form action="{{route('programas.destroyPosttitulo',$posttitulo)}}" METHOD="POST">
                                             @csrf
                                             @method('delete')
-                                            <button class="text-indigo-600 font-semibold hover:text-indigo-900" onclick="return confirm('¿Esta seguro que desea eliminar este programa de Pre-Grado?')" type="submit">Eliminar</button>
+                                            <button class="text-indigo-600 font-semibold hover:text-indigo-900" onclick="return confirm('¿Esta seguro que desea eliminar este programa de Post-Titulo?')" type="submit">Eliminar</button>
                                         </form>
                                     </div>
                                     @endauth

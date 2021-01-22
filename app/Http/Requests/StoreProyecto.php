@@ -26,6 +26,7 @@ class StoreProyecto extends FormRequest
         return [
             'nombre'=>'required|unique:proyectos|min:10|max:150',
             'objetivo'=>'required|min:10|max:200',
+            'empresa'=>'required|min:10|max:150',
             'link'=>'required'
         ];
     }
@@ -40,6 +41,9 @@ class StoreProyecto extends FormRequest
             'objetivo.required'=>'El proyecto debe tener un objetivo',
             'objetivo.min'=>'El objetivo debe tener como minimo 10 caracteres',
             'objetivo.max'=>'El objetivo debe tener como maximo 200 caracteres',
+            'empresa.required'=>'El proyecto debe tener una empresa',
+            'empresa.min'=>'La empresa debe tener como minimo 10 caracteres',
+            'empresa.max'=>'La empresa debe tener como maximo 150 caracteres',
             'link.required'=>'El proyecto debe tener un enlace'
         ];
     }

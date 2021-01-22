@@ -18,6 +18,8 @@ class CreateProyectosTable extends Migration
             $table->string('nombre')->unique();
             $table->string('slug');
             $table->string('objetivo');
+            $table->string('empresa');
+            $table->text('externo')->nullable();
             $table->string('link');
             $table->timestamps();
         });

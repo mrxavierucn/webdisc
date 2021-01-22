@@ -43,11 +43,35 @@
                 </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                    <dt class="text-sm font-medium text-gray-500">
+                        Empresa Fundadora*
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <input class="border rounded border-gray-300 w-96" type="text" name="empresa" value="{{old('empresa',$proyecto->empresa)}}">
+                            @error('empresa')
+                                <br>
+                                <small>*{{$message}}</small>
+                            @enderror
+                    </dd>
+                </div>
+                <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500 ">
                         Link*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                         <input class="border rounded border-gray-300 w-96" type="text" name="link" value="{{old('link',$proyecto->link)}}">
+                    </dd>
+                </div>
+                <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                    <dt class="text-sm font-medium text-gray-500">
+                        Colaboradores Externos:
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        <textarea name="externo" cols="60" rows="10" >{{old('externo',$proyecto->externo)}}</textarea>
+                        @error('externo')
+                            <br>
+                            <small>*{{$message}}</small>
+                        @enderror
                     </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">

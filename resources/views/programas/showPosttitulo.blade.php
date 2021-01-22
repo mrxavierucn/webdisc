@@ -42,7 +42,8 @@
               Cuerpo de Profesores:
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              {{$posttitulo->cuerpo}}
+                <p style="white-space: pre-line">{{$posttitulo->cuerpo}}</p>
+
           </dd>
           </div>
         @endif

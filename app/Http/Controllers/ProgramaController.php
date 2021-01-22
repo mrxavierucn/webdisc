@@ -204,23 +204,17 @@ class ProgramaController extends Controller
 
     public function storePosttitulo(StorePosttitulo $request){
         $slug=Str::slug($request->nombre,'-');
+        $archivo = $request->file('malla')->store('mallaPosttitulo');
+        $url=Storage::url($archivo);
         $posttitulo=Posttitulo::create([
             'nombre'=>$request->nombre,
             'slug'=>$slug,
             'coordinador'=>$request->coordinador,
             'descripcion'=>$request->descripcion,
             'duracion'=>$request->duracion,
-            'cuerpo'=>'',
-            'malla'=>'',
+            'cuerpo'=>$request->cuerpo,
+            'malla'=>$url,
         ]);
-        if($request->malla){
-            $archivo = $request->file('malla')->store('mallaPosttitulo');
-            $url=Storage::url($archivo);
-            $posttitulo->update([
-                'malla'=>$url,
-            ]);
-        }
-
         return redirect()->route('programas.showPosttitulo',$posttitulo);
     }
 
@@ -243,6 +237,7 @@ class ProgramaController extends Controller
             'coordinador'=>'required|min:10|max:150',
             'descripcion'=>'required|min:10|max:1500',
             'duracion'=>'required|integer',
+            'cuerpo'=>'required|min:10|max:1500'
         ]);
         $slug=Str::slug($request->nombre,'-');
 
@@ -252,7 +247,6 @@ class ProgramaController extends Controller
             'coordinador'=>$request->coordinador,
             'descripcion'=>$request->descripcion,
             'duracion'=>$request->duracion,
-            'malla'=>$request->malla,
             'cuerpo'=>$request->cuerpo,
         ]);
 

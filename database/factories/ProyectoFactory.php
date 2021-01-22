@@ -27,6 +27,7 @@ class ProyectoFactory extends Factory
             'nombre'=>$nombre,
             'slug'=>Str::slug($nombre,'-'),
             'objetivo'=>$this->faker->sentence(),
+            'empresa'=>$this->faker->name(),
             'link'=>$this->faker->url()
         ];
     }

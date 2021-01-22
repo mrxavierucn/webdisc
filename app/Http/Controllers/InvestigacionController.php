@@ -42,6 +42,7 @@ class InvestigacionController extends Controller
             'nombre'=>$request->nombre,
             'slug'=>$slug,
             'objetivo'=>$request->objetivo,
+            'empresa'=>$request->empresa,
             'link'=>$request->link
         ]);
 
@@ -67,6 +68,7 @@ class InvestigacionController extends Controller
                 'max:200',
             ],
             'objetivo'=>'required|min:10|max:200',
+            'empresa'=>'required|min:10|max:150',
             'link'=>'required'
         ]);
         $slug=Str::slug($request->nombre,'-');
@@ -75,6 +77,8 @@ class InvestigacionController extends Controller
             'nombre'=>$request->nombre,
             'slug'=>$slug,
             'objetivo'=>$request->objetivo,
+            'empresa'=>$request->empresa,
+            'externo'=>$request->externo,
             'link'=>$request->link
         ]);
 
@@ -180,6 +184,7 @@ class InvestigacionController extends Controller
             'anio'=>$request->anio,
             'primera_pagina'=>$request->primera_pagina,
             'ultima_pagina'=>$request->ultima_pagina,
+            'externo'=>$request->externo,
             'link'=>$request->link,
         ]);
 

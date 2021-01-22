@@ -67,11 +67,15 @@
                     </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
-                    <dt class="text-sm font-medium text-gray-500 ">
+                    <dt class="text-sm font-medium text-gray-500">
                         Cuerpo de Profesores:
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="border rounded border-gray-300 w-96" type="text" name="cuerpo" value="{{old('cuerpo',$posttitulo->cuerpo)}}">
+                        <textarea name="cuerpo" cols="60" rows="10" >{{old('cuerpo',$posttitulo->cuerpo)}}</textarea>
+                        @error('cuerpo')
+                            <br>
+                            <small>*{{$message}}</small>
+                        @enderror
                     </dd>
                 </div>
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">

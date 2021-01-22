@@ -58,7 +58,7 @@
             @if ($academicos->count())
             <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">
-                    Colaboradores:
+                    Co-autores del Departamento:
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     Nombre:
@@ -77,7 +77,28 @@
             @else
             <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                 <dt class="text-sm font-medium text-gray-500">
-                    Sin Colaboradores
+                    Sin Co-autores del Departamento
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+
+                </dd>
+            </div>
+            @endif
+            @if ($publicacion->externo)
+            <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                <dt class="text-sm font-medium text-gray-500">
+                    Co-autores Externos:
+                </dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <p style="white-space: pre-line">{{$publicacion->externo}}</p>
+
+
+                </dd>
+            </div>
+            @else
+            <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
+                <dt class="text-sm font-medium text-gray-500">
+                    Sin Co-autores externos
                 </dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
 
@@ -87,13 +108,13 @@
             @auth
                 <div class="bg-gray-100 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 border border-gray-200">
                     <dt class="text-sm font-medium text-gray-500">
-                        <a href="{{route('investigacion.editPublicacion',$publicacion)}}">Modificar Publicacion</a>
+                        <a href="{{route('investigacion.editPublicacion',$publicacion)}}">Modificar Publicacion/Co-autores Exteros</a>
                         <br>
-                        <a href="{{route('investigacion.editColaboradoresPublicacion',$publicacion)}}">Cambiar Colaboradores</a>
+                        <a href="{{route('investigacion.editColaboradoresPublicacion',$publicacion)}}">Cambiar Co-autores del Departamento</a>
                         <form action="{{route('investigacion.destroyPublicacion',$publicacion)}}" METHOD="POST">
                             @csrf
                             @method('delete')
-                            <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este programa?')">Eliminar Publicación</button>
+                            <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar esta publicacion?')">Eliminar Publicación</button>
                         </form>
                     </dt>
                 </div>

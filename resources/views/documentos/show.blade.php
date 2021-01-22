@@ -54,7 +54,7 @@
                 <form action="{{route('documentos.destroy',$documento)}}" METHOD="POST">
                     @csrf
                     @method('delete')
-                    <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este programa?')">Eliminar Documento</button>
+                    <button class="font-semibold" type="submit" onclick="return confirm('¿Esta seguro que desea eliminar este documento?')">Eliminar Documento</button>
                 </form>
             </dt>
           </div>

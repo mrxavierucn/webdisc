@@ -10,6 +10,8 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\InvestigacionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Artisan;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +27,14 @@ Route::get('/', HomeController::class)->name('home');
 
 Route::get('historia',[HomeController::class,'historia'])->name('historia');
 
-Route::get('contactenos',[HomeController::class,'contacto'])->name('contacto');
+Route::get('contactanos',function(){
+    $correo=new ContactanosMailable();
+
+    Mail::to('javier.burgos@alumnos.ucn.cl')->send($correo);
+
+    return "Mensaje Enviado";
+});
+
 
 //programas
 
@@ -201,18 +210,19 @@ Route::delete('investigacion/listaPublicaciones/{publicacion}',[InvestigacionCon
 
 Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[InvestigacionController::class,'destroyColaboradoresPublicacion'])->name('investigacion.destroyColaboradoresPublicacion');
 
+
 //Administrador
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
 })->name('dashboard');
-
+/*
 Route::middleware('auth')->get('/register', function () {
     return view('auth.register');
 })->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])->middleware(['auth']);
-
+*/
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
 });

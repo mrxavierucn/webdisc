@@ -18,10 +18,10 @@ class CreatePosttitulosTable extends Migration
             $table->string('nombre')->unique();
             $table->string('slug');
             $table->string('coordinador');
-            $table->string('malla')->nullable();
+            $table->string('malla');
             $table->unsignedTinyInteger('duracion');
             $table->text('descripcion');
-            $table->string('cuerpo')->nullable;
+            $table->text('cuerpo');
             $table->timestamps();
         });
     }

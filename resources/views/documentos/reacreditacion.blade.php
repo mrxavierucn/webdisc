@@ -59,7 +59,7 @@
                                         <form action="{{route('documentos.destroy',$reacreditacion)}}" METHOD="POST">
                                             @csrf
                                             @method('delete')
-                                            <button class="text-indigo-600 font-semibold hover:text-indigo-900" onclick="return confirm('¿Esta seguro que desea eliminar a este academico?')" type="submit">Eliminar</button>
+                                            <button class="text-indigo-600 font-semibold hover:text-indigo-900" onclick="return confirm('¿Esta seguro que desea eliminar este documento?')" type="submit">Eliminar</button>
                                         </form>
                                     </div>
                                     @endauth

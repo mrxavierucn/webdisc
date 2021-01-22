@@ -25,10 +25,10 @@
                   <div class="">
                     <div class="" ></div>
                   </div>
-                  <div class="category-title flex-1 text-sm font-bold">Cuerpo Académico</div>
+                  <div class="category-title flex-1 text-sm font-bold">Funcionarios del Departamento</div>
                 </div>
                 <br><br>
-                <div class="summary-post text-base text-justify">Los Académicos Con los que contamos.
+                <div class="summary-post text-base text-justify">Los Funcionarios Con los que contamos.
                   <button class="bg-blue-100 text-blue-500 mt-4 block rounded p-2 text-sm "><a href="{{route('academicos')}}">Ver Mas</a></button>
                 </div>
 

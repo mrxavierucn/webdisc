@@ -22,6 +22,7 @@ class CreatePublicacionsTable extends Migration
             $table->unsignedSmallInteger('anio');
             $table->unsignedSmallInteger('primera_pagina');
             $table->unsignedSmallInteger('ultima_pagina');
+            $table->text('externo')->nullable();
             $table->string('link');
             $table->timestamps();
         });

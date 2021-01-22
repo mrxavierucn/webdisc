@@ -26,9 +26,10 @@ class StorePosttitulo extends FormRequest
         return [
             'nombre'=>'required|unique:posttitulos|min:10|max:200',
             'coordinador'=>'required|min:10|max:150',
-            'malla'=>'image',
+            'malla'=>'required|image',
             'duracion'=>'required|integer',
             'descripcion'=>'required|min:10|max:1500',
+            'cuerpo'=>'required|min:10|max:1500'
         ];
     }
 
@@ -42,12 +43,16 @@ class StorePosttitulo extends FormRequest
             'coordinador.required'=>'El programa debe tener un coordinador',
             'coordinador.min'=>'El nombre del coordinador debe tener como minimo 10 caracteres',
             'coordinador.max'=>'El nombre del coordinador debe tener como maximo 150 caracteres',
+            'malla.required'=>'El programa debe tener una malla.',
             'malla.image'=>'Archivo invalido. Asegurese de haber subido un archivo de tipo imagen.',
             'duracion.required'=>'El programa debe tener una duracion en semestres',
             'duracion.integer'=>'Ingrese un dato numerico',
             'descripcion.required'=>'El programa debe mostrar una descripcion',
             'descripcion.min'=>'La descripcion debe tener como minimo 10 caracteres',
             'descripcion.max'=>'La descripcion debe tener como maximo 1500 caracteres',
+            'cuerpo.required'=>'El programa debe mostrar un cuerpo academico',
+            'cuerpo.min'=>'El cuerpo debe tener como minimo 10 caracteres',
+            'cuerpo.max'=>'El cuerpo debe tener como maximo 1500 caracteres',
         ];
     }
 }
