@@ -216,13 +216,13 @@ Route::delete('investigacion/listaPublicaciones/{academico}/{publicacion}',[Inve
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('home');
 })->name('dashboard');
-/*
+
 Route::middleware('auth')->get('/register', function () {
     return view('auth.register');
 })->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])->middleware(['auth']);
-*/
+
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
 });

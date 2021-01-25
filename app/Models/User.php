@@ -20,6 +20,14 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
+    /**
+     * The database connection used by the model.
+     *
+     * @var string
+     */
+    protected $connection = 'mysqlLogin';
+
     /**
      * The attributes that are mass assignable.
      *
