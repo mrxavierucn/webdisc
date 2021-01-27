@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+
 
 @php
     $nav_links=[
@@ -6,16 +6,6 @@
             'name'=>'Inicio',
             'route'=>route('dashboard'),
             'active'=>request()->routeIs('dashboard')
-        ],
-        [
-            'name'=>'Historia',
-            'route'=>route('historia'),
-            'active'=>request()->routeIs('historia')
-        ],
-        [
-            'name'=>'Academicos',
-            'route'=>route('academicos'),
-            'active'=>request()->routeIs('academicos')
         ],
     ];
 @endphp
