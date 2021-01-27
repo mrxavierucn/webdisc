@@ -65,7 +65,7 @@ class InvestigacionController extends Controller
                 'required',
                 Rule::unique('proyectos')->ignore($proyecto),
                 'min:10',
-                'max:200',
+                'max:150',
             ],
             'objetivo'=>'required|min:10|max:200',
             'empresa'=>'required|min:10|max:150',
@@ -167,12 +167,15 @@ class InvestigacionController extends Controller
         $request->validate([
             'nombre'=>[
                 'required',
-                Rule::unique('publicacions')->ignore($publicacion)
+                Rule::unique('publicacions')->ignore($publicacion),
+                'min:10',
+                'max:150',
             ],
-            'revista'=>'required',
-            'anio'=>'required',
-            'primera_pagina'=>'required',
-            'ultima_pagina'=>'required',
+            'traduccion'=>'max:150',
+            'revista'=>'required|min:10|max:200',
+            'anio'=>'required|integer',
+            'primera_pagina'=>'required|integer',
+            'ultima_pagina'=>'required|integer',
             'link'=>'required'
         ]);
         $slug=Str::slug($request->nombre,'-');

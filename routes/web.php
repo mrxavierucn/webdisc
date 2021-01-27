@@ -10,8 +10,6 @@ use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\InvestigacionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Illuminate\Support\Facades\Artisan;
-use App\Mail\ContactanosMailable;
-use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,15 +24,6 @@ use Illuminate\Support\Facades\Mail;
 Route::get('/', HomeController::class)->name('home');
 
 Route::get('historia',[HomeController::class,'historia'])->name('historia');
-
-Route::get('contactanos',function(){
-    $correo=new ContactanosMailable();
-
-    Mail::to('javier.burgos@alumnos.ucn.cl')->send($correo);
-
-    return "Mensaje Enviado";
-});
-
 
 //programas
 

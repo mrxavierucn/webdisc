@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Planta Temporal')
+@section('title','Académicos de Planta Temporal')
 
 @section('content')
 

@@ -27,7 +27,7 @@ class StorePostgrado extends FormRequest
             'nombre'=>'required|unique:postgrados|min:10|max:200',
             'director'=>'required|min:10|max:150',
             'descripcion'=>'required|min:10|max:1500',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
         ];
     }
 
@@ -46,6 +46,8 @@ class StorePostgrado extends FormRequest
             'descripcion.max'=>'La descripcion debe tener como maximo 1500 caracteres',
             'duracion.required'=>'El programa debe tener una duracion en semestres',
             'duracion.integer'=>'Ingrese un dato numerico',
+            'duracion.min'=>'La duracion debe ser como minimo de 2',
+            'duracion.max'=>'La duracion debe ser como maximo de 16',
         ];
     }
 }

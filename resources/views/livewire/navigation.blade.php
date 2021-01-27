@@ -122,7 +122,19 @@
                                 </a>
                             </div>
                         </div>
-
+                        <div class="">
+                            <div class="relative inline-block dropdown">
+                                <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-banner-opcion">
+                                    <span class="mr-1">Enlaces Externos</span>
+                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                                </button>
+                                <ul class="absolute hidden text-gray-700 dropdown-menu">
+                                    <li class=""><a class="block px-3 py-2 text-white whitespace-no-wrap rounded-t bg-banner hover:bg-banner-opcion" href="http://webmagister.test" target="_blank">Sistema Magister</a></li>
+                                    <li class=""><a class="block px-3 py-2 text-white whitespace-no-wrap bg-banner hover:bg-banner-opcion" href="http://localhost:3000/" target="_blank">Sistema de Actas</a></li>
+                                    <li class=""><a class="block px-3 py-2 text-white whitespace-no-wrap rounded-b bg-banner hover:bg-banner-opcion" href="http://vinculacionvcm.test/login" target="_blank">Vinculación con el medio</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -246,6 +258,33 @@
                         <a href="{{route('noticias')}}">
                             <button class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-banner-opcion">
                                 <span>Portal de Noticias</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="relative inline-block dropdown">
+                        <a href="http://webmagister.test" target="_blank">
+                            <button class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-banner-opcion">
+                                <span>Sistema Magister</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="relative inline-block dropdown">
+                        <a href="http://localhost:3000/" target="_blank">
+                            <button class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-banner-opcion">
+                                <span>Sistema de Actas</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="relative inline-block dropdown">
+                        <a href="http://vinculacionvcm.test/login" target="_blank">
+                            <button class="px-3 py-2 text-sm font-medium text-white rounded-md hover:bg-banner-opcion">
+                                <span>Vinculación con el Medio</span>
                             </button>
                         </a>
                     </div>

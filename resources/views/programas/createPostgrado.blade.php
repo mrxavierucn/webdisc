@@ -58,7 +58,7 @@
                         Duración en Semestres*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="border rounded border-gray-300 w-96" type="text" name="duracion" value="{{old('duracion')}}">
+                        <input class="border rounded border-gray-300 w-20" type="number" min="2" max="16" name="duracion" value="{{old('duracion')}}">
                         @error('duracion')
                             <br>
                             <small>*{{$message}}</small>

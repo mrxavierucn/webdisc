@@ -58,7 +58,7 @@
                         Año*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="border rounded border-gray-300 w-96" type="text" name="anio" value="{{old('anio')}}">
+                        <input class="border rounded border-gray-300 w-20" type="number" min="1900" max="2100" name="anio" value="{{old('anio')}}">
                             @error('anio')
                                 <br>
                                 <small>*{{$message}}</small>
@@ -70,7 +70,7 @@
                         Primera Pagina*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="border rounded border-gray-300 w-96" type="text" name="primera_pagina" value="{{old('primera_pagina')}}">
+                        <input class="border rounded border-gray-300 w-20" type="number" min="1" max="10000" name="primera_pagina" value="{{old('primera_pagina')}}">
                             @error('primera_pagina')
                                 <br>
                                 <small>*{{$message}}</small>
@@ -82,7 +82,7 @@
                         Ultima Pagina*
                     </dt>
                     <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        <input class="border rounded border-gray-300 w-96" type="text" name="ultima_pagina" value="{{old('ultima_pagina')}}">
+                        <input class="border rounded border-gray-300 w-20" type="number" min="1" max="10000" name="ultima_pagina" value="{{old('ultima_pagina')}}">
                             @error('ultima_pagina')
                                 <br>
                                 <small>*{{$message}}</small>

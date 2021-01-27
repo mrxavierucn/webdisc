@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Documentos create')
+@section('title','Subir Documento')
 
 @section('content')
 

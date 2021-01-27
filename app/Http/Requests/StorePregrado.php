@@ -30,7 +30,7 @@ class StorePregrado extends FormRequest
             'gradoAcademico'=>'required|min:10|max:150',
             'area'=>'required|min:10|max:150',
             'subarea'=>'required|min:10|max:200',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
             'acreditacion'=>'required|min:10|max:150',
             'perfilEgresado'=>'required|min:10|max:2000',
         ];
@@ -61,6 +61,8 @@ class StorePregrado extends FormRequest
             'subarea.max'=>'El sub-area academico debe tener como maximo 200 caracteres',
             'duracion.required'=>'El programa debe tener una duracion en semestres',
             'duracion.integer'=>'Ingrese un dato numerico',
+            'duracion.min'=>'La duracion debe ser como minimo de 2',
+            'duracion.max'=>'La duracion debe ser como maximo de 16',
             'acreditacion.required'=>'El programa debe indicar el estado de acreditacion',
             'acreditacion.min'=>'El estado de acreditacion debe tener como minimo 10 caracteres',
             'acreditacion.max'=>'El estado de acreditacion debe tener como maximo 150 caracteres',

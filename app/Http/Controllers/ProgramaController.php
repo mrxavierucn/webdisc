@@ -84,7 +84,7 @@ class ProgramaController extends Controller
             'gradoAcademico'=>'required|min:10|max:150',
             'area'=>'required|min:10|max:150',
             'subarea'=>'required|min:10|max:200',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
             'acreditacion'=>'required|min:10|max:150',
             'perfilEgresado'=>'required|min:10|max:2000',
         ]);
@@ -164,7 +164,7 @@ class ProgramaController extends Controller
             ],
             'director'=>'required|min:10|max:150',
             'descripcion'=>'required|min:10|max:1500',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
         ]);
 
         $slug=Str::slug($request->nombre,'-');
@@ -236,7 +236,7 @@ class ProgramaController extends Controller
             ],
             'coordinador'=>'required|min:10|max:150',
             'descripcion'=>'required|min:10|max:1500',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
             'cuerpo'=>'required|min:10|max:1500'
         ]);
         $slug=Str::slug($request->nombre,'-');

@@ -1,4 +1,4 @@
-{{-- @extends('layouts.plantilla') --}}
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 
 <x-guest-layout>
     <x-jet-authentication-card>

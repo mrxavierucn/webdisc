@@ -7,8 +7,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use App\Mail\Bienvenido;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -38,26 +39,18 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
-        // return DB::transaction(function () use ($input) {
-        //     return tap(User::create([
-        //         'name' => $input['name'],
-        //         'email' => $input['email'],
-        //         'password' => Hash::make($input['password']),
-        //     ]), function (User $user) {
-        //         $this->createTeam($user);
-        //     });
-        // });
         $email = $input['email'];
-        // $data = ([
-        //         'name' => $input['name'],
-        //         'email' => $input['email'],
-        //         'password' => $input['password'],
-        //         ]);
 
-        // Mail::to($email)->send(new WelcomeMail($data));
+        $data = ([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'password' => $input['password'],
+        ]);
+
+        Mail::to($email)->send(new Bienvenido($data));
 
         $userreg->save();
-        //flash(‘User has been added!’,’success’)->important();
+
         return $userreg;
     }
 

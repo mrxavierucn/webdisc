@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Proyecto')
+@section('title',$proyecto->nombre)
 
 @section('content')
 

@@ -7,20 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactanosMailable extends Mailable
+class Bienvenido extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Contactenos";
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -30,6 +30,7 @@ class ContactanosMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contactanos');
+        $subject = 'Bienvenido a la Plataforma del DISC';
+        return $this->view('emails.bienvenido')->subject($subject);
     }
 }

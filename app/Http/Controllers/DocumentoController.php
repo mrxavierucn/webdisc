@@ -103,7 +103,7 @@ class DocumentoController extends Controller
                 'required',
                 Rule::unique('documentos')->ignore($documento),
                 'min:10',
-                'max:500'
+                'max:100'
             ],
             'descripcion'=>'required|min:10|max:500',
         ]);

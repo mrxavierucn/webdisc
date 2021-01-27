@@ -27,7 +27,7 @@ class StorePosttitulo extends FormRequest
             'nombre'=>'required|unique:posttitulos|min:10|max:200',
             'coordinador'=>'required|min:10|max:150',
             'malla'=>'required|image',
-            'duracion'=>'required|integer',
+            'duracion'=>'required|integer|min:2|max:16',
             'descripcion'=>'required|min:10|max:1500',
             'cuerpo'=>'required|min:10|max:1500'
         ];
@@ -47,6 +47,8 @@ class StorePosttitulo extends FormRequest
             'malla.image'=>'Archivo invalido. Asegurese de haber subido un archivo de tipo imagen.',
             'duracion.required'=>'El programa debe tener una duracion en semestres',
             'duracion.integer'=>'Ingrese un dato numerico',
+            'duracion.min'=>'La duracion debe ser como minimo de 2',
+            'duracion.max'=>'La duracion debe ser como maximo de 16',
             'descripcion.required'=>'El programa debe mostrar una descripcion',
             'descripcion.min'=>'La descripcion debe tener como minimo 10 caracteres',
             'descripcion.max'=>'La descripcion debe tener como maximo 1500 caracteres',

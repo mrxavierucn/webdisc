@@ -36,7 +36,7 @@ class StoreDocumento extends FormRequest
             'titulo.required'=>'El Documento debe tener un titulo',
             'titulo.unique'=>'Ya existe un documento con ese titulo',
             'titulo.min'=>'El titulo debe tener como minimo 10 caracteres',
-            'titulo.max'=>'El titulo debe tener como maximo 50 caracteres',
+            'titulo.max'=>'El titulo debe tener como maximo 100 caracteres',
             'descripcion.required'=>'El Documento debe tener una descripcion',
             'descripcion.min'=>'La descripcion debe tener como minimo 10 caracteres',
             'descripcion.max'=>'La descripcion debe tener como maximo 500 caracteres',

@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Noticias create')
+@section('title','Publicar Noticia')
 
 @section('content')
 
